@@ -4,7 +4,8 @@ import { Navbar } from "@/components/Navbar";
 import { ProjectCard } from "@/components/ProjectCard";
 import { Timeline } from "@/components/Timeline";
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, MapPin, Phone } from "lucide-react";
+import { Github, Linkedin, Mail, MapPin, Phone, Code, Dumbbell, Dog, Music, Play, X } from "lucide-react";
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -378,7 +379,8 @@ export default function Home() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
                 {/* Tech & Coding Card */}
-                <div className="p-6 bg-card border border-border rounded-sm hover:border-foreground/20 transition-colors space-y-4">
+                <div className="p-6 bg-card border border-border rounded-sm hover:border-foreground/20 transition-colors space-y-4 relative group">
+                  <Code className="absolute top-6 right-6 h-6 w-6 text-muted-foreground/20 group-hover:text-foreground/40 transition-colors" />
                   <div>
                     <div className="flex items-center justify-between mb-2">
                       <h3 className="text-xl font-bold">Tech & Coding</h3>
@@ -406,15 +408,17 @@ export default function Home() {
                 </div>
 
                 {/* Active Lifestyle Card */}
-                <div className="p-6 bg-card border border-border rounded-sm hover:border-foreground/20 transition-colors flex flex-col justify-center">
+                <div className="p-6 bg-card border border-border rounded-sm hover:border-foreground/20 transition-colors flex flex-col justify-center relative group">
+                  <Dumbbell className="absolute top-6 right-6 h-6 w-6 text-muted-foreground/20 group-hover:text-foreground/40 transition-colors" />
                   <h3 className="text-xl font-bold mb-2">Active Lifestyle</h3>
                   <p className="text-muted-foreground leading-relaxed text-sm">
-                    I find my best self by balancing a solid daily routine with the excitement of new challenges. From the sharp focus required in boxing to the communication and teamwork of soccer, I rely on a disciplined lifestyle to keep my mind and body ready for whatever comes next. To me, sports are more than just a hobby; they are a tool I use to practice the art of getting better every single day.
+                    I find strength in the balance of a disciplined routine and the thrill of new challenges. Driven by a passion for sports and a diligent mindset, I stay consistent while always seeking growth. Every new endeavor is a chance to evolve, powered by stable habits and the courage to try something new.
                   </p>
                 </div>
 
                 {/* Animal Lover Card */}
-                <div className="p-6 bg-card border border-border rounded-sm hover:border-foreground/20 transition-colors flex flex-col justify-center">
+                <div className="p-6 bg-card border border-border rounded-sm hover:border-foreground/20 transition-colors flex flex-col justify-center relative group">
+                  <Dog className="absolute top-6 right-6 h-6 w-6 text-muted-foreground/20 group-hover:text-foreground/40 transition-colors" />
                   <h3 className="text-xl font-bold mb-2">Animal Lover</h3>
                   <p className="text-muted-foreground leading-relaxed text-sm">
                     Passionate about animal welfare.
@@ -422,13 +426,7 @@ export default function Home() {
                 </div>
 
                 {/* Music Enthusiast Card */}
-                <div className="p-6 bg-card border border-border rounded-sm hover:border-foreground/20 transition-colors flex flex-col justify-center">
-                  <h3 className="text-xl font-bold mb-2">Music Enthusiast</h3>
-                  <p className="text-muted-foreground leading-relaxed text-sm">
-                    Enjoying and appreciating music.
-                  </p>
-                </div>
-
+                <MusicCard />
               </div>
             </div>
           </motion.div>
@@ -474,5 +472,52 @@ export default function Home() {
 
       </main >
     </div >
+  );
+}
+
+function MusicCard() {
+  const [isPlaying, setIsPlaying] = useState(false);
+  // Default YouTube ID (Lofi Girl) - can be replaced with user's link
+  const videoId = "wQWCIggOhZE";
+
+  return (
+    <>
+      <div
+        onClick={() => setIsPlaying(true)}
+        className="p-6 bg-card border border-border rounded-sm hover:border-foreground/20 transition-all cursor-pointer flex flex-col justify-center relative group"
+      >
+        <Music className="absolute top-6 right-6 h-6 w-6 text-muted-foreground/20 group-hover:text-foreground/40 transition-colors" />
+        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors flex items-center justify-center pointer-events-none">
+          <Play className="h-12 w-12 text-foreground opacity-0 group-hover:opacity-100 transition-all scale-75 group-hover:scale-100" />
+        </div>
+
+        <h3 className="text-xl font-bold mb-2">Music Enthusiast</h3>
+        <p className="text-muted-foreground leading-relaxed text-sm">
+          Appreciation for music. Click to play.
+        </p>
+      </div>
+
+      {isPlaying && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4" onClick={() => setIsPlaying(false)}>
+          <div className="relative w-full max-w-4xl aspect-video bg-black rounded-lg overflow-hidden shadow-2xl" onClick={e => e.stopPropagation()}>
+            <button
+              onClick={() => setIsPlaying(false)}
+              className="absolute top-4 right-4 z-10 p-2 bg-black/50 rounded-full text-white hover:bg-black/70 transition-colors"
+            >
+              <X className="h-6 w-6" />
+            </button>
+            <iframe
+              width="100%"
+              height="100%"
+              src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              className="w-full h-full"
+            ></iframe>
+          </div>
+        </div>
+      )}
+    </>
   );
 }
