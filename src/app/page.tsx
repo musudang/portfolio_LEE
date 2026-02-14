@@ -292,12 +292,57 @@ export default function Home() {
                     <p className="text-muted-foreground">Active Member</p>
                   </div>
 
-                  {/* Placeholder for Extracurricular Photos */}
-                  <div className="relative min-h-[300px] w-full mt-4 rounded-sm border border-border/50 border-dashed flex items-center justify-center p-4 bg-muted/10">
-                    <p className="text-muted-foreground text-sm text-center">
-                      User Photos Area<br />
-                      (Pending Upload)
-                    </p>
+                  {/* Extracurricular Photo Collage */}
+                  <div className="relative h-[400px] w-full mt-6 rounded-sm overflow-hidden">
+                    {/* Wrestling Group - Top Left */}
+                    <div className="absolute top-0 left-0 w-[55%] h-[50%] z-10 transition-transform duration-300 hover:z-50 hover:scale-105 border-2 border-background shadow-lg rounded-sm overflow-hidden">
+                      <Image
+                        src="/wrestling_group.jpg"
+                        alt="Wrestling Team"
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+
+                    {/* Canaan Farmers - Top Right */}
+                    <div className="absolute top-[5%] right-0 w-[50%] h-[40%] z-20 transition-transform duration-300 hover:z-50 hover:scale-105 border-2 border-background shadow-lg rounded-sm overflow-hidden">
+                      <Image
+                        src="/canaan_farmers.jpg"
+                        alt="Canaan Farmers"
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+
+                    {/* Judo Practice - Center Left */}
+                    <div className="absolute top-[45%] left-[-5%] w-[45%] h-[45%] z-30 transition-transform duration-300 hover:z-50 hover:scale-105 border-2 border-background shadow-lg rounded-sm overflow-hidden">
+                      <Image
+                        src="/judo_practice.jpg"
+                        alt="Judo Practice"
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+
+                    {/* Animalmate Cage - Bottom Right Center */}
+                    <div className="absolute bottom-0 right-[25%] w-[40%] h-[45%] z-20 transition-transform duration-300 hover:z-50 hover:scale-105 border-2 border-background shadow-lg rounded-sm overflow-hidden">
+                      <Image
+                        src="/animalmate_cage.jpg"
+                        alt="Animal Shelter"
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+
+                    {/* Animalmate Walk - Bottom Right */}
+                    <div className="absolute bottom-[10%] right-[-5%] w-[35%] h-[40%] z-10 transition-transform duration-300 hover:z-50 hover:scale-105 border-2 border-background shadow-lg rounded-sm overflow-hidden">
+                      <Image
+                        src="/animalmate_walk.jpg"
+                        alt="Walking Dog"
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
