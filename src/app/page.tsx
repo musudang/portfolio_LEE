@@ -200,6 +200,14 @@ export default function Home() {
                       <p className="font-medium">PT. Tekniko (2020)</p>
                       <p className="text-muted-foreground text-sm">Indonesia</p>
                     </div>
+                    <div className="relative aspect-video w-full overflow-hidden rounded-sm mt-2 border border-border/50">
+                      <Image
+                        src="/internship.jpg"
+                        alt="Internship at PT. Tekniko"
+                        fill
+                        className="object-cover hover:scale-105 transition-transform duration-500"
+                      />
+                    </div>
                   </div>
 
 
