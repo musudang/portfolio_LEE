@@ -73,16 +73,15 @@ export default function Home() {
               <div className="pt-2">
                 <h3 className="text-xs font-mono text-muted-foreground mb-3 uppercase tracking-widest">Contact</h3>
                 <div className="flex gap-4 items-center">
-                  <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
-                    Instagram
-                  </a>
-
-                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
-                    LinkedIn
-                  </a>
                   <Link href="#contact" className="p-2 bg-secondary rounded-full text-foreground hover:bg-foreground hover:text-background transition-colors">
                     <Phone size={16} />
                   </Link>
+                  <a href="https://www.instagram.com/raphaelseunghunlee/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
+                    Instagram
+                  </a>
+                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
+                    LinkedIn
+                  </a>
                 </div>
               </div>
 
@@ -114,6 +113,27 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <ProjectCard
+              title="FRESC LEAP"
+              description="Carbon emission tracking and reduction project. Applying economic models to environmental data."
+              tags={["Research", "Climate Economics", "Data Analysis"]}
+              year="2025"
+              category="Research"
+            />
+            <ProjectCard
+              title="Korea Industry Sector: Greenhouse Gas Policy: Research"
+              description="Academic research paper analyzing policy impacts on local food systems."
+              tags={["Academic", "Economics", "Paper"]}
+              year="2025"
+              category="Research"
+            />
+            <ProjectCard
+              title="Investment Expert Training"
+              description="Agricultural Investor Starter: Agriculture, Fisheries and Food Industry."
+              tags={["Finance", "Agriculture", "Analysis"]}
+              year="2025"
+              category="Training"
+            />
+            <ProjectCard
               title="TEMAN"
               description="A community application for foreigners in Korea. Bridging cultural gaps through technology."
               tags={["Flutter", "Firebase", "Community"]}
@@ -137,32 +157,11 @@ export default function Home() {
               category="Startup"
             />
             <ProjectCard
-              title="FRESC LEAP"
-              description="Carbon emission tracking and reduction project. Applying economic models to environmental data."
-              tags={["Research", "Climate Economics", "Data Analysis"]}
-              year="2024"
-              category="Research"
-            />
-            <ProjectCard
-              title="Korea Industry Sector: Greenhouse Gas Policy: Research"
-              description="Academic research paper analyzing policy impacts on local food systems."
-              tags={["Academic", "Economics", "Paper"]}
-              year="2024"
-              category="Research"
-            />
-            <ProjectCard
               title="Food Marketing Strategy"
               description="Strategic marketing portfolio and project presentation."
               tags={["Marketing", "Strategy", "PPT"]}
-              year="2024"
+              year="2025"
               category="Business"
-            />
-            <ProjectCard
-              title="Investment Expert Training"
-              description="Agricultural Investor Starter: Agriculture, Fisheries and Food Industry."
-              tags={["Finance", "Agriculture", "Analysis"]}
-              year="2024"
-              category="Training"
             />
             <ProjectCard
               title="KT&G Start-up Contest"
