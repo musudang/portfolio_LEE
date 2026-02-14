@@ -69,42 +69,41 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-          </div>
 
-          <div className="pt-2">
-            <h3 className="text-xs font-mono text-muted-foreground mb-3 uppercase tracking-widest">Contact</h3>
-            <div className="flex gap-4 items-center">
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
-                Instagram
-              </a>
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
-                GitHub
-              </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
-                LinkedIn
-              </a>
-              <Link href="#contact" className="p-2 bg-secondary rounded-full text-foreground hover:bg-foreground hover:text-background transition-colors">
-                <Phone size={16} />
-              </Link>
-            </div>
-          </div>
+              <div className="pt-2">
+                <h3 className="text-xs font-mono text-muted-foreground mb-3 uppercase tracking-widest">Contact</h3>
+                <div className="flex gap-4 items-center">
+                  <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
+                    Instagram
+                  </a>
+                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
+                    GitHub
+                  </a>
+                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
+                    LinkedIn
+                  </a>
+                  <Link href="#contact" className="p-2 bg-secondary rounded-full text-foreground hover:bg-foreground hover:text-background transition-colors">
+                    <Phone size={16} />
+                  </Link>
+                </div>
+              </div>
 
-          <div className="pt-6 border-t border-border">
-            <h3 className="text-xs font-mono text-muted-foreground mb-3 uppercase tracking-widest">Languages</h3>
-            <div className="flex flex-wrap gap-x-4 gap-y-2 text-sm">
-              <span className="font-medium">Korean (Native)</span>
-              <span className="text-muted-foreground">/</span>
-              <span className="font-medium">English (Fluent)</span>
-              <span className="text-muted-foreground">/</span>
-              <span className="font-medium">Indonesian (Intermediate)</span>
-            </div>
+              <div className="pt-6 border-t border-border">
+                <h3 className="text-xs font-mono text-muted-foreground mb-3 uppercase tracking-widest">Languages</h3>
+                <div className="flex flex-wrap gap-x-4 gap-y-2 text-sm">
+                  <span className="font-medium">Korean (Native)</span>
+                  <span className="text-muted-foreground">/</span>
+                  <span className="font-medium">English (Fluent)</span>
+                  <span className="text-muted-foreground">/</span>
+                  <span className="font-medium">Indonesian (Intermediate)</span>
+                </div>
+              </div>
+            </motion.div>
           </div>
-        </motion.div>
-    </div>
         </section >
 
-    {/* Projects Section */ }
-    < section id = "projects" className = "py-24 border-t border-border" >
+        {/* Projects Section */}
+        < section id="projects" className="py-24 border-t border-border" >
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -162,147 +161,147 @@ export default function Home() {
           </div>
         </section >
 
-    {/* Experience Section */ }
-    < section id = "experience" className = "py-24 border-t border-border" >
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-        <div className="lg:col-span-4 space-y-12">
+        {/* Experience Section */}
+        < section id="experience" className="py-24 border-t border-border" >
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+            <div className="lg:col-span-4 space-y-12">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+              >
+                <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-8">Experience</h2>
+
+                <div className="space-y-8">
+                  <div className="space-y-2">
+                    <h3 className="text-lg font-bold">Education</h3>
+                    <div>
+                      <p className="font-medium">Korea University</p>
+                      <p className="text-muted-foreground text-sm">B.A. Food & Resource Economics</p>
+                      <p className="text-muted-foreground text-sm">Minor in Climate Change Economics</p>
+                    </div>
+                  </div>
+
+                  <div className="space-y-2">
+                    <h3 className="text-lg font-bold">Internship</h3>
+                    <div>
+                      <p className="font-medium">PT. Tekniko</p>
+                      <p className="text-muted-foreground text-sm">Indonesia</p>
+                    </div>
+                  </div>
+
+                  <div className="space-y-3">
+                    <h3 className="text-lg font-bold">Tools</h3>
+                    <div className="flex flex-wrap gap-2">
+                      {["Flutter", "Dart", "React", "Python", "Java", "Git", "Vercel"].map(tool => (
+                        <span key={tool} className="px-2.5 py-1 bg-secondary text-xs font-medium rounded-sm border border-border/50">
+                          {tool}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="space-y-2">
+                    <h3 className="text-lg font-bold">Certificates</h3>
+                    <ul className="text-muted-foreground space-y-1 text-sm font-mono list-disc list-inside marker:text-foreground/50">
+                      <li>TOEFL / TOEIC</li>
+                      <li>OPIc (Aiming for AL)</li>
+                      <li>TIBA / LEAP / INFOSELLER</li>
+                    </ul>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+
+            <div className="lg:col-span-8 pt-2">
+              <Timeline items={[
+                {
+                  year: "2026",
+                  title: "4th Year Senior",
+                  company: "Korea University",
+                  description: "Focusing on graduation requirements and capstone projects."
+                },
+                {
+                  year: "2024 - 2025",
+                  title: "Junior Year",
+                  company: "Korea University",
+                  description: "Deepened studies in macroeconomics and resource management."
+                },
+                {
+                  year: "2023 - 2024",
+                  title: "Sophomore Year",
+                  company: "Korea University",
+                  description: "Returned to academic life. Started multiple web projects including Surfly."
+                },
+                {
+                  year: "2022 - 2023",
+                  title: "Military Service",
+                  company: "Republic of Korea Army",
+                  description: "Served and completed mandatory military duty."
+                },
+                {
+                  year: "2021 - 2022",
+                  title: "Freshman Year",
+                  company: "Korea University",
+                  description: "Entered university. Joined Judo Team and Mixed Martial Arts club."
+                },
+                {
+                  year: "2020",
+                  title: "Graduation",
+                  company: "High School",
+                  description: "Graduated High School."
+                },
+              ]} />
+            </div>
+          </div>
+        </section >
+
+        {/* Extracurricular Section */}
+        < section id="extracurricular" className="py-24 border-t border-border" >
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            className="grid grid-cols-1 md:grid-cols-2 gap-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-8">Experience</h2>
+            <div className="space-y-8">
+              <h2 className="text-3xl font-bold tracking-tight">Clubs</h2>
+              <div className="space-y-4">
+                <div className="p-6 bg-card border border-border rounded-sm hover:border-foreground/20 transition-colors">
+                  <h3 className="text-xl font-bold mb-1">Korea Univ. Judo Team</h3>
+                  <p className="text-muted-foreground">Active Member</p>
+                </div>
+                <div className="p-6 bg-card border border-border rounded-sm hover:border-foreground/20 transition-colors">
+                  <h3 className="text-xl font-bold mb-1">Mixed Martial Arts</h3>
+                  <p className="text-muted-foreground">Korea University Club</p>
+                </div>
+                <div className="p-6 bg-card border border-border rounded-sm hover:border-foreground/20 transition-colors">
+                  <h3 className="text-xl font-bold mb-1">Food Future Partners</h3>
+                  <p className="text-muted-foreground">Investment Expert Training</p>
+                </div>
+              </div>
+            </div>
 
             <div className="space-y-8">
-              <div className="space-y-2">
-                <h3 className="text-lg font-bold">Education</h3>
-                <div>
-                  <p className="font-medium">Korea University</p>
-                  <p className="text-muted-foreground text-sm">B.A. Food & Resource Economics</p>
-                  <p className="text-muted-foreground text-sm">Minor in Climate Change Economics</p>
+              <h2 className="text-3xl font-bold tracking-tight">Volunteer</h2>
+              <div className="space-y-4">
+                <div className="p-6 bg-card border border-border rounded-sm hover:border-foreground/20 transition-colors">
+                  <h3 className="text-xl font-bold mb-1">Animalmate</h3>
+                  <p className="text-muted-foreground">Abandoned Dog Shelter Volunteer</p>
+                  <p className="text-sm text-muted-foreground mt-2 leading-relaxed">Regular weekend volunteering to care for rescued animals. Cleaning cages, walking dogs, and assisting with feedings.</p>
                 </div>
-              </div>
-
-              <div className="space-y-2">
-                <h3 className="text-lg font-bold">Internship</h3>
-                <div>
-                  <p className="font-medium">PT. Tekniko</p>
-                  <p className="text-muted-foreground text-sm">Indonesia</p>
+                <div className="p-6 bg-card border border-border rounded-sm hover:border-foreground/20 transition-colors">
+                  <h3 className="text-xl font-bold mb-1">Canaan Farmers School</h3>
+                  <p className="text-muted-foreground">Community Service</p>
                 </div>
-              </div>
-
-              <div className="space-y-3">
-                <h3 className="text-lg font-bold">Tools</h3>
-                <div className="flex flex-wrap gap-2">
-                  {["Flutter", "Dart", "React", "Python", "Java", "Git", "Vercel"].map(tool => (
-                    <span key={tool} className="px-2.5 py-1 bg-secondary text-xs font-medium rounded-sm border border-border/50">
-                      {tool}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <div className="space-y-2">
-                <h3 className="text-lg font-bold">Certificates</h3>
-                <ul className="text-muted-foreground space-y-1 text-sm font-mono list-disc list-inside marker:text-foreground/50">
-                  <li>TOEFL / TOEIC</li>
-                  <li>OPIc (Aiming for AL)</li>
-                  <li>TIBA / LEAP / INFOSELLER</li>
-                </ul>
               </div>
             </div>
+
           </motion.div>
-        </div>
-
-        <div className="lg:col-span-8 pt-2">
-          <Timeline items={[
-            {
-              year: "2026",
-              title: "4th Year Senior",
-              company: "Korea University",
-              description: "Focusing on graduation requirements and capstone projects."
-            },
-            {
-              year: "2024 - 2025",
-              title: "Junior Year",
-              company: "Korea University",
-              description: "Deepened studies in macroeconomics and resource management."
-            },
-            {
-              year: "2023 - 2024",
-              title: "Sophomore Year",
-              company: "Korea University",
-              description: "Returned to academic life. Started multiple web projects including Surfly."
-            },
-            {
-              year: "2022 - 2023",
-              title: "Military Service",
-              company: "Republic of Korea Army",
-              description: "Served and completed mandatory military duty."
-            },
-            {
-              year: "2021 - 2022",
-              title: "Freshman Year",
-              company: "Korea University",
-              description: "Entered university. Joined Judo Team and Mixed Martial Arts club."
-            },
-            {
-              year: "2020",
-              title: "Graduation",
-              company: "High School",
-              description: "Graduated High School."
-            },
-          ]} />
-        </div>
-      </div>
         </section >
 
-    {/* Extracurricular Section */ }
-    < section id = "extracurricular" className = "py-24 border-t border-border" >
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="grid grid-cols-1 md:grid-cols-2 gap-12"
-      >
-        <div className="space-y-8">
-          <h2 className="text-3xl font-bold tracking-tight">Clubs</h2>
-          <div className="space-y-4">
-            <div className="p-6 bg-card border border-border rounded-sm hover:border-foreground/20 transition-colors">
-              <h3 className="text-xl font-bold mb-1">Korea Univ. Judo Team</h3>
-              <p className="text-muted-foreground">Active Member</p>
-            </div>
-            <div className="p-6 bg-card border border-border rounded-sm hover:border-foreground/20 transition-colors">
-              <h3 className="text-xl font-bold mb-1">Mixed Martial Arts</h3>
-              <p className="text-muted-foreground">Korea University Club</p>
-            </div>
-            <div className="p-6 bg-card border border-border rounded-sm hover:border-foreground/20 transition-colors">
-              <h3 className="text-xl font-bold mb-1">Food Future Partners</h3>
-              <p className="text-muted-foreground">Investment Expert Training</p>
-            </div>
-          </div>
-        </div>
-
-        <div className="space-y-8">
-          <h2 className="text-3xl font-bold tracking-tight">Volunteer</h2>
-          <div className="space-y-4">
-            <div className="p-6 bg-card border border-border rounded-sm hover:border-foreground/20 transition-colors">
-              <h3 className="text-xl font-bold mb-1">Animalmate</h3>
-              <p className="text-muted-foreground">Abandoned Dog Shelter Volunteer</p>
-              <p className="text-sm text-muted-foreground mt-2 leading-relaxed">Regular weekend volunteering to care for rescued animals. Cleaning cages, walking dogs, and assisting with feedings.</p>
-            </div>
-            <div className="p-6 bg-card border border-border rounded-sm hover:border-foreground/20 transition-colors">
-              <h3 className="text-xl font-bold mb-1">Canaan Farmers School</h3>
-              <p className="text-muted-foreground">Community Service</p>
-            </div>
-          </div>
-        </div>
-
-      </motion.div>
-        </section >
-
-    {/* Contact Footer */ }
-    < section id = "contact" className = "py-24 border-t border-border" >
+        {/* Contact Footer */}
+        < section id="contact" className="py-24 border-t border-border" >
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-16">
             <div className="space-y-8">
               <h2 className="text-5xl md:text-8xl font-bold tracking-tighter">
