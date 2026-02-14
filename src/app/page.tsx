@@ -328,13 +328,23 @@ export default function Home() {
                 {/* Tech & Coding Card */}
                 <div className="p-6 bg-card border border-border rounded-sm hover:border-foreground/20 transition-colors space-y-4">
                   <div>
-                    <h3 className="text-xl font-bold mb-2">Tech & Coding</h3>
+                    <div className="flex items-center justify-between mb-2">
+                      <h3 className="text-xl font-bold">Tech & Coding</h3>
+                      <a
+                        href="https://github.com/musudang"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-muted-foreground hover:text-foreground transition-colors"
+                      >
+                        <Github className="h-5 w-5" />
+                      </a>
+                    </div>
                     <p className="text-muted-foreground leading-relaxed text-sm">
-                      Self-teaching app and web development. Deeply interested in AI-assisted "Vibe Coding". Building capabilities to drive future startup projects.
+                      A self-taught developer specializing in AI-augmented rapid prototyping. I bridge the gap between abstract ideas and functional digital products, leveraging modern AI toolchains to build scalable solutions for the startup ecosystem.
                     </p>
                   </div>
                   <div className="flex flex-wrap gap-2 pt-2">
-                    {["Flutter", "Dart", "React", "Python", "Java", "Git", "Vercel"].map(tool => (
+                    {["Antigravity", "C++", "TypeScript", "Docker", "Tailwind CSS", "Flutter", "Dart", "React", "Python", "Java", "Git", "Vercel"].map(tool => (
                       <span key={tool} className="px-2.5 py-1 bg-secondary text-xs font-medium rounded-sm border border-border/50">
                         {tool}
                       </span>
@@ -346,7 +356,7 @@ export default function Home() {
                 <div className="p-6 bg-card border border-border rounded-sm hover:border-foreground/20 transition-colors flex flex-col justify-center">
                   <h3 className="text-xl font-bold mb-2">Active Lifestyle</h3>
                   <p className="text-muted-foreground leading-relaxed text-sm">
-                    Enthusiast of sports and various dynamic activities.
+                    I find my best self by balancing a solid daily routine with the excitement of new challenges. From the sharp focus required in boxing to the communication and teamwork of soccer, I rely on a disciplined lifestyle to keep my mind and body ready for whatever comes next. To me, sports are more than just a hobby; they are a tool I use to practice the art of getting better every single day.
                   </p>
                 </div>
 
