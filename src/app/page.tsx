@@ -280,13 +280,10 @@ export default function Home() {
                     <p className="text-muted-foreground">Active Member</p>
                   </div>
                   <div className="p-6 bg-card border border-border rounded-sm hover:border-foreground/20 transition-colors">
-                    <h3 className="text-xl font-bold mb-1">Mixed Martial Arts</h3>
-                    <p className="text-muted-foreground">Korea University Club</p>
+                    <h3 className="text-xl font-bold mb-1">Korea Univ. MMA Team</h3>
+                    <p className="text-muted-foreground">Active Member</p>
                   </div>
-                  <div className="p-6 bg-card border border-border rounded-sm hover:border-foreground/20 transition-colors">
-                    <h3 className="text-xl font-bold mb-1">Food Future Partners</h3>
-                    <p className="text-muted-foreground">Investment Expert Training</p>
-                  </div>
+
                 </div>
               </div>
 
@@ -301,6 +298,11 @@ export default function Home() {
                   <div className="p-6 bg-card border border-border rounded-sm hover:border-foreground/20 transition-colors">
                     <h3 className="text-xl font-bold mb-1">Canaan Farmers School</h3>
                     <p className="text-muted-foreground">Community Service</p>
+                  </div>
+                  <div className="p-6 bg-card border border-border rounded-sm hover:border-foreground/20 transition-colors">
+                    <h3 className="text-xl font-bold mb-1">National Institute for International Education (NIIED)</h3>
+                    <p className="text-muted-foreground">Volunteer</p>
+                    <p className="text-sm text-muted-foreground mt-2 leading-relaxed">Assisted participants and supported Korean university briefings at the 2018 Study in Korea Fair in Indonesia.</p>
                   </div>
                 </div>
               </div>
