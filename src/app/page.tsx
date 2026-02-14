@@ -6,6 +6,7 @@ import { Timeline } from "@/components/Timeline";
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -25,12 +26,13 @@ export default function Home() {
               transition={{ duration: 0.8 }}
               className="relative aspect-[3/4] md:aspect-square bg-secondary rounded-sm overflow-hidden"
             >
-              {/* Fallback for failed image generation - Stylish Typography */}
-              <div className="absolute inset-0 flex items-center justify-center text-9xl font-bold opacity-5 tracking-tighter select-none">
-                MSD
-              </div>
-              {/* If we had an image, it would go here. For now, a subtle pattern or color. */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-background/20 to-transparent" />
+              <Image
+                src="/profile.png"
+                alt="Seung Hun, Lee"
+                fill
+                className="object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                priority
+              />
             </motion.div>
 
             {/* Content */}
@@ -38,14 +40,14 @@ export default function Home() {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="space-y-8"
+              className="space-y-6"
             >
               <div>
                 <h1 className="text-5xl md:text-7xl font-bold tracking-tighter mb-4">
-                  Musudang
+                  Seung Hun, Lee
                 </h1>
                 <p className="text-xl text-muted-foreground">
-                  Food & Resource Economics @ Korea University
+                  Food & Resource Economics / Climate Change
                 </p>
               </div>
 
@@ -53,9 +55,28 @@ export default function Home() {
                 <p>
                   I'm a senior student passionate about <span className="text-foreground font-medium">environmental economics</span> and <span className="text-foreground font-medium">entrepreneurship</span>.
                 </p>
-                <p>
-                  Growing up in Indonesia gave me a unique perspective on global markets and sustainability. I blend economic research with technical skills to build solutions that matter.
-                </p>
+                <div className="grid grid-cols-2 gap-4 text-sm mt-4">
+                  <div>
+                    <h4 className="font-bold mb-1">Indonesia</h4>
+                    <p className="text-muted-foreground">20 Years</p>
+                  </div>
+                  <div>
+                    <h4 className="font-bold mb-1">Korea</h4>
+                    <p className="text-muted-foreground">5 Years (Ongoing)</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex gap-4 pt-4">
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
+                  Instagram
+                </a>
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
+                  GitHub
+                </a>
+                <a href="tel:+821043942277" className="text-muted-foreground hover:text-foreground transition-colors">
+                  +82 10 4394 2277
+                </a>
               </div>
 
               <div className="pt-6 border-t border-border">
