@@ -292,6 +292,13 @@ export default function Home() {
                     <p className="text-muted-foreground">Active Member</p>
                   </div>
 
+                  {/* Placeholder for Extracurricular Photos */}
+                  <div className="relative min-h-[300px] w-full mt-4 rounded-sm border border-border/50 border-dashed flex items-center justify-center p-4 bg-muted/10">
+                    <p className="text-muted-foreground text-sm text-center">
+                      User Photos Area<br />
+                      (Pending Upload)
+                    </p>
+                  </div>
                 </div>
               </div>
 
@@ -334,8 +341,9 @@ export default function Home() {
                         href="https://github.com/musudang"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-muted-foreground hover:text-foreground transition-colors"
+                        className="text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2 group"
                       >
+                        <span className="text-sm font-medium group-hover:underline">GitHub</span>
                         <Github className="h-5 w-5" />
                       </a>
                     </div>
