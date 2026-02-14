@@ -1,25 +1,37 @@
 @import "tailwindcss";
 
 :root {
+  /* Minimalist Monochrome Theme */
   --background: #ffffff;
   --foreground: #000000;
+
   --card: #ffffff;
   --card-foreground: #000000;
+
   --popover: #ffffff;
   --popover-foreground: #000000;
+
   --primary: #000000;
   --primary-foreground: #ffffff;
+
   --secondary: #f4f4f5;
   --secondary-foreground: #18181b;
+
   --muted: #f4f4f5;
   --muted-foreground: #71717a;
+
   --accent: #f4f4f5;
   --accent-foreground: #18181b;
+
   --destructive: #ef4444;
   --destructive-foreground: #fafafa;
+
   --border: #e4e4e7;
   --input: #e4e4e7;
   --ring: #18181b;
+
+  --radius: 0rem;
+  /* Sharp edges for minimalist feel */
 }
 
 @theme inline {
@@ -42,36 +54,56 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: calc(var(--radius));
+  --radius-lg: calc(var(--radius) + 2px);
+  --font-sans: var(--font-inter);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #000000;
-    --foreground: #ffffff;
-    --card: #000000;
-    --card-foreground: #ffffff;
-    --popover: #000000;
-    --popover-foreground: #ffffff;
-    --primary: #ffffff;
-    --primary-foreground: #000000;
-    --secondary: #27272a;
-    --secondary-foreground: #fafafa;
-    --muted: #27272a;
-    --muted-foreground: #a1a1aa;
-    --accent: #27272a;
-    --accent-foreground: #fafafa;
-    --destructive: #7f1d1d;
+    --background: #0a0a0a;
+    --foreground: #ededed;
+
+    --card: #0a0a0a;
+    --card-foreground: #ededed;
+
+    --popover: #0a0a0a;
+    --popover-foreground: #ededed;
+
+    --primary: #ededed;
+    --primary-foreground: #0a0a0a;
+
+    --secondary: #262626;
+    --secondary-foreground: #ededed;
+
+    --muted: #262626;
+    --muted-foreground: #a3a3a3;
+
+    --accent: #262626;
+    --accent-foreground: #ededed;
+
+    --destructive: #991b1b;
     --destructive-foreground: #fafafa;
-    --border: #27272a;
-    --input: #27272a;
+
+    --border: #262626;
+    --input: #262626;
     --ring: #d4d4d8;
   }
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom Utilities for Grid */
+.grid-cols-custom {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
