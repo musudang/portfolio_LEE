@@ -433,34 +433,45 @@ export default function Home() {
         </section >
 
         {/* Contact Footer */}
-        < section id="contact" className="py-24 border-t border-border" >
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-16">
+        <section id="contact" className="py-24 border-t border-border">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <div className="space-y-8">
-              <h2 className="text-5xl md:text-8xl font-bold tracking-tighter">
+              <h2 className="text-5xl md:text-7xl font-bold tracking-tighter">
                 Let's Talk.
               </h2>
-              <div className="flex flex-col gap-4 text-lg">
-                <a href="mailto:musudang@korea.ac.kr" className="flex items-center gap-4 hover:text-muted-foreground transition-colors group">
-                  <Mail className="h-5 w-5 text-muted-foreground group-hover:text-foreground transition-colors" />
-                  <span className="border-b border-transparent group-hover:border-foreground transition-colors">musudang@korea.ac.kr</span>
-                </a>
-                <a href="tel:+821043942277" className="flex items-center gap-4 hover:text-muted-foreground transition-colors group">
-                  <Phone className="h-5 w-5 text-muted-foreground group-hover:text-foreground transition-colors" />
-                  <span className="border-b border-transparent group-hover:border-foreground transition-colors">+82 10 4394 2277</span>
-                </a>
-                <span className="flex items-center gap-4 text-muted-foreground">
-                  <MapPin className="h-5 w-5" /> Seoul, Korea
-                </span>
+              <div className="flex flex-col gap-6 text-lg">
+                <p className="text-muted-foreground max-w-md">
+                  Have a project in mind or just want to say hi? Feel free to reach out. I'm always open to discussing new projects, creative ideas, or opportunities.
+                </p>
+
+                <div className="space-y-4 mt-4">
+                  <a href="mailto:musudang@korea.ac.kr" className="flex items-center gap-4 hover:text-muted-foreground transition-colors group">
+                    <Mail className="h-5 w-5 text-muted-foreground group-hover:text-foreground transition-colors" />
+                    <span className="border-b border-transparent group-hover:border-foreground transition-colors">musudang@korea.ac.kr</span>
+                  </a>
+                  <a href="tel:+821043942277" className="flex items-center gap-4 hover:text-muted-foreground transition-colors group">
+                    <Phone className="h-5 w-5 text-muted-foreground group-hover:text-foreground transition-colors" />
+                    <span className="border-b border-transparent group-hover:border-foreground transition-colors">+82 10 4394 2277</span>
+                  </a>
+                  <span className="flex items-center gap-4 text-muted-foreground">
+                    <MapPin className="h-5 w-5" /> Seoul, Korea
+                  </span>
+                </div>
+
+                <div className="flex gap-4 mt-4">
+                  <Link href="https://github.com/musudang" target="_blank" className="p-4 rounded-full bg-secondary hover:bg-foreground hover:text-background transition-all duration-300">
+                    <Github size={20} />
+                  </Link>
+                  <Link href="https://linkedin.com" target="_blank" className="p-4 rounded-full bg-secondary hover:bg-foreground hover:text-background transition-all duration-300">
+                    <Linkedin size={20} />
+                  </Link>
+                </div>
               </div>
             </div>
 
-            <div className="flex gap-4">
-              <Link href="https://github.com" target="_blank" className="p-4 rounded-full bg-foreground text-background hover:scale-110 transition-transform duration-300">
-                <Github size={24} />
-              </Link>
-              <Link href="https://linkedin.com" target="_blank" className="p-4 rounded-full bg-foreground text-background hover:scale-110 transition-transform duration-300">
-                <Linkedin size={24} />
-              </Link>
+            {/* Contact Form */}
+            <div className="bg-card/50 p-8 rounded-2xl border border-border/50">
+              <ContactForm />
             </div>
           </div>
 
@@ -468,7 +479,7 @@ export default function Home() {
             <span>© 2026 Musudang. All rights reserved.</span>
             <span>Design by Antigravity</span>
           </div>
-        </section >
+        </section>
 
       </main >
     </div >
@@ -519,5 +530,69 @@ function MusicCard() {
         </div>
       )}
     </>
+  );
+}
+
+function ContactForm() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: ""
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const subject = `Portfolio Contact from ${formData.name}`;
+    const body = `Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0A%0D%0AMessage:%0D%0A${formData.message}`;
+    window.location.href = `mailto:musudang@korea.ac.kr?subject=${subject}&body=${body}`;
+  };
+
+  return (
+    <form onSubmit={handleSubmit} className="space-y-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="space-y-2">
+          <label htmlFor="name" className="text-sm font-medium text-muted-foreground">Name</label>
+          <input
+            type="text"
+            id="name"
+            placeholder="Your name"
+            required
+            className="w-full bg-background border border-border rounded-md px-4 py-3 text-sm focus:outline-none focus:ring-1 focus:ring-foreground/50 transition-all placeholder:text-muted-foreground/50"
+            value={formData.name}
+            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+          />
+        </div>
+        <div className="space-y-2">
+          <label htmlFor="email" className="text-sm font-medium text-muted-foreground">Email</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="Your email"
+            required
+            className="w-full bg-background border border-border rounded-md px-4 py-3 text-sm focus:outline-none focus:ring-1 focus:ring-foreground/50 transition-all placeholder:text-muted-foreground/50"
+            value={formData.email}
+            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+          />
+        </div>
+      </div>
+      <div className="space-y-2">
+        <label htmlFor="message" className="text-sm font-medium text-muted-foreground">Message</label>
+        <textarea
+          id="message"
+          placeholder="How can I help you?"
+          required
+          rows={6}
+          className="w-full bg-background border border-border rounded-md px-4 py-3 text-sm focus:outline-none focus:ring-1 focus:ring-foreground/50 transition-all resize-none placeholder:text-muted-foreground/50"
+          value={formData.message}
+          onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+        />
+      </div>
+      <button
+        type="submit"
+        className="w-full bg-foreground text-background font-medium py-3 rounded-md hover:opacity-90 transition-opacity flex items-center justify-center gap-2"
+      >
+        Send Message <Mail className="h-4 w-4" />
+      </button>
+    </form>
   );
 }
