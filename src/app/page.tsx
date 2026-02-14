@@ -60,11 +60,11 @@ export default function Home() {
                   <div className="grid grid-cols-2 gap-4 text-sm">
                     <div>
                       <h4 className="font-bold mb-1">Indonesia</h4>
-                      <p className="text-muted-foreground">20 Years</p>
+                      <p className="text-muted-foreground">(2002-2020)</p>
                     </div>
                     <div>
                       <h4 className="font-bold mb-1">Korea</h4>
-                      <p className="text-muted-foreground">5 Years (Ongoing)</p>
+                      <p className="text-muted-foreground">(2021- present)</p>
                     </div>
                   </div>
                 </div>
@@ -76,9 +76,7 @@ export default function Home() {
                   <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
                     Instagram
                   </a>
-                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
-                    GitHub
-                  </a>
+
                   <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
                     LinkedIn
                   </a>
@@ -127,6 +125,7 @@ export default function Home() {
               title="Surfly.info"
               description="A comprehensive surfing platform developed with fellow students. Provides real-time wave reports and spot guides."
               tags={["Web Dev", "React", "Data Aggregation"]}
+              link="https://surfly.info"
               year="2025"
               category="Web Platform"
             />
@@ -145,18 +144,32 @@ export default function Home() {
               category="Research"
             />
             <ProjectCard
-              title="Climate Change Economics"
+              title="Korea Industry Sector: Greenhouse Gas Policy: Research"
               description="Academic research paper analyzing policy impacts on local food systems."
               tags={["Academic", "Economics", "Paper"]}
               year="2024"
               category="Research"
             />
             <ProjectCard
-              title="Sikma Marketing"
+              title="Food Marketing Strategy"
               description="Strategic marketing portfolio and project presentation."
               tags={["Marketing", "Strategy", "PPT"]}
               year="2024"
               category="Business"
+            />
+            <ProjectCard
+              title="Investment Expert Training"
+              description="Agricultural Investor Starter: Agriculture, Fisheries and Food Industry."
+              tags={["Finance", "Agriculture", "Analysis"]}
+              year="2024"
+              category="Training"
+            />
+            <ProjectCard
+              title="KT&G Start-up Contest"
+              description="Fitting Room (platform service business)."
+              tags={["Startup", "Business", "Platform"]}
+              year="2023"
+              category="Startup"
             />
           </div>
         </section >
