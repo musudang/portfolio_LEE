@@ -189,36 +189,29 @@ export default function Home() {
                     <h3 className="text-lg font-bold">Education</h3>
                     <div>
                       <p className="font-medium">Korea University</p>
-                      <p className="text-muted-foreground text-sm">B.A. Food & Resource Economics</p>
-                      <p className="text-muted-foreground text-sm">Minor in Climate Change Economics</p>
+                      <p className="text-muted-foreground text-sm">Food & Resource Economics</p>
+                      <p className="text-muted-foreground text-sm">Minor in Climate Change</p>
                     </div>
                   </div>
 
                   <div className="space-y-2">
                     <h3 className="text-lg font-bold">Internship</h3>
                     <div>
-                      <p className="font-medium">PT. Tekniko</p>
+                      <p className="font-medium">PT. Tekniko (2020)</p>
                       <p className="text-muted-foreground text-sm">Indonesia</p>
                     </div>
                   </div>
 
-                  <div className="space-y-3">
-                    <h3 className="text-lg font-bold">Tools</h3>
-                    <div className="flex flex-wrap gap-2">
-                      {["Flutter", "Dart", "React", "Python", "Java", "Git", "Vercel"].map(tool => (
-                        <span key={tool} className="px-2.5 py-1 bg-secondary text-xs font-medium rounded-sm border border-border/50">
-                          {tool}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
+
 
                   <div className="space-y-2">
                     <h3 className="text-lg font-bold">Certificates</h3>
                     <ul className="text-muted-foreground space-y-1 text-sm font-mono list-disc list-inside marker:text-foreground/50">
-                      <li>TOEFL / TOEIC</li>
-                      <li>OPIc (Aiming for AL)</li>
-                      <li>TIBA / LEAP / INFOSELLER</li>
+                      <li>TOEFL</li>
+                      <li>OPIc</li>
+                      <li>TIBA (Indonesian as a Foreign Language Test)</li>
+                      <li>FRESC: LEAP (Research paper contest)</li>
+                      <li>START-UP CONTEST: INFOSELLER</li>
                     </ul>
                   </div>
                 </div>
@@ -237,13 +230,13 @@ export default function Home() {
                   year: "2024 - 2025",
                   title: "Junior Year",
                   company: "Korea University",
-                  description: "Deepened studies in macroeconomics and resource management."
+                  description: "Deepened understanding in economics and started climate change major."
                 },
                 {
                   year: "2023 - 2024",
                   title: "Sophomore Year",
                   company: "Korea University",
-                  description: "Returned to academic life. Started multiple web projects including Surfly."
+                  description: "Returned to academic life. Completed multiple projects."
                 },
                 {
                   year: "2022 - 2023",
@@ -255,7 +248,7 @@ export default function Home() {
                   year: "2021 - 2022",
                   title: "Freshman Year",
                   company: "Korea University",
-                  description: "Entered university. Joined Judo Team and Mixed Martial Arts club."
+                  description: "Entered university."
                 },
                 {
                   year: "2020",
@@ -274,41 +267,53 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-2 gap-12"
+            className="space-y-12"
           >
-            <div className="space-y-8">
-              <h2 className="text-3xl font-bold tracking-tight">Clubs</h2>
-              <div className="space-y-4">
-                <div className="p-6 bg-card border border-border rounded-sm hover:border-foreground/20 transition-colors">
-                  <h3 className="text-xl font-bold mb-1">Korea Univ. Judo Team</h3>
-                  <p className="text-muted-foreground">Active Member</p>
-                </div>
-                <div className="p-6 bg-card border border-border rounded-sm hover:border-foreground/20 transition-colors">
-                  <h3 className="text-xl font-bold mb-1">Mixed Martial Arts</h3>
-                  <p className="text-muted-foreground">Korea University Club</p>
-                </div>
-                <div className="p-6 bg-card border border-border rounded-sm hover:border-foreground/20 transition-colors">
-                  <h3 className="text-xl font-bold mb-1">Food Future Partners</h3>
-                  <p className="text-muted-foreground">Investment Expert Training</p>
-                </div>
+            <div className="space-y-3">
+              <h2 className="text-3xl font-bold tracking-tight mb-4">Tools</h2>
+              <div className="flex flex-wrap gap-2">
+                {["Flutter", "Dart", "React", "Python", "Java", "Git", "Vercel"].map(tool => (
+                  <span key={tool} className="px-2.5 py-1 bg-secondary text-xs font-medium rounded-sm border border-border/50">
+                    {tool}
+                  </span>
+                ))}
               </div>
             </div>
 
-            <div className="space-y-8">
-              <h2 className="text-3xl font-bold tracking-tight">Volunteer</h2>
-              <div className="space-y-4">
-                <div className="p-6 bg-card border border-border rounded-sm hover:border-foreground/20 transition-colors">
-                  <h3 className="text-xl font-bold mb-1">Animalmate</h3>
-                  <p className="text-muted-foreground">Abandoned Dog Shelter Volunteer</p>
-                  <p className="text-sm text-muted-foreground mt-2 leading-relaxed">Regular weekend volunteering to care for rescued animals. Cleaning cages, walking dogs, and assisting with feedings.</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              <div className="space-y-8">
+                <h2 className="text-3xl font-bold tracking-tight">Clubs</h2>
+                <div className="space-y-4">
+                  <div className="p-6 bg-card border border-border rounded-sm hover:border-foreground/20 transition-colors">
+                    <h3 className="text-xl font-bold mb-1">Korea Univ. Judo Team</h3>
+                    <p className="text-muted-foreground">Active Member</p>
+                  </div>
+                  <div className="p-6 bg-card border border-border rounded-sm hover:border-foreground/20 transition-colors">
+                    <h3 className="text-xl font-bold mb-1">Mixed Martial Arts</h3>
+                    <p className="text-muted-foreground">Korea University Club</p>
+                  </div>
+                  <div className="p-6 bg-card border border-border rounded-sm hover:border-foreground/20 transition-colors">
+                    <h3 className="text-xl font-bold mb-1">Food Future Partners</h3>
+                    <p className="text-muted-foreground">Investment Expert Training</p>
+                  </div>
                 </div>
-                <div className="p-6 bg-card border border-border rounded-sm hover:border-foreground/20 transition-colors">
-                  <h3 className="text-xl font-bold mb-1">Canaan Farmers School</h3>
-                  <p className="text-muted-foreground">Community Service</p>
+              </div>
+
+              <div className="space-y-8">
+                <h2 className="text-3xl font-bold tracking-tight">Volunteer</h2>
+                <div className="space-y-4">
+                  <div className="p-6 bg-card border border-border rounded-sm hover:border-foreground/20 transition-colors">
+                    <h3 className="text-xl font-bold mb-1">Animalmate</h3>
+                    <p className="text-muted-foreground">Abandoned Dog Shelter Volunteer</p>
+                    <p className="text-sm text-muted-foreground mt-2 leading-relaxed">Regular weekend volunteering to care for rescued animals. Cleaning cages, walking dogs, and assisting with feedings.</p>
+                  </div>
+                  <div className="p-6 bg-card border border-border rounded-sm hover:border-foreground/20 transition-colors">
+                    <h3 className="text-xl font-bold mb-1">Canaan Farmers School</h3>
+                    <p className="text-muted-foreground">Community Service</p>
+                  </div>
                 </div>
               </div>
             </div>
-
           </motion.div>
         </section >
 
