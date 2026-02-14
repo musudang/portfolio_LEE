@@ -304,21 +304,60 @@ export default function Home() {
                     <p className="text-muted-foreground">Volunteer</p>
                     <p className="text-sm text-muted-foreground mt-2 leading-relaxed">Assisted participants and supported Korean university briefings at the 2018 Study in Korea Fair in Indonesia.</p>
                   </div>
+                  <div className="p-6 bg-card border border-border rounded-sm hover:border-foreground/20 transition-colors">
+                    <h3 className="text-xl font-bold mb-1">KOWIN Indonesia Korean School</h3>
+                    <p className="text-muted-foreground">Assistant Teacher</p>
+                    <p className="text-sm text-muted-foreground mt-2 leading-relaxed">Served as an Assistant Teacher, supporting Korean language education for the local Korean community.</p>
+                  </div>
                 </div>
               </div>
             </div>
 
             <div className="mt-12 space-y-6">
-              <h2 className="text-3xl font-bold tracking-tight">Hobbies</h2>
-              <div className="space-y-3">
-                <h3 className="text-xl font-bold">Tools</h3>
-                <div className="flex flex-wrap gap-2">
-                  {["Flutter", "Dart", "React", "Python", "Java", "Git", "Vercel"].map(tool => (
-                    <span key={tool} className="px-2.5 py-1 bg-secondary text-xs font-medium rounded-sm border border-border/50">
-                      {tool}
-                    </span>
-                  ))}
+              <h2 className="text-3xl font-bold tracking-tight mb-6">Hobbies</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                {/* Tech & Coding Card */}
+                <div className="p-6 bg-card border border-border rounded-sm hover:border-foreground/20 transition-colors space-y-4">
+                  <div>
+                    <h3 className="text-xl font-bold mb-2">Tech & Coding</h3>
+                    <p className="text-muted-foreground leading-relaxed text-sm">
+                      Self-teaching app and web development. Deeply interested in AI-assisted "Vibe Coding". Building capabilities to drive future startup projects.
+                    </p>
+                  </div>
+                  <div className="flex flex-wrap gap-2 pt-2">
+                    {["Flutter", "Dart", "React", "Python", "Java", "Git", "Vercel"].map(tool => (
+                      <span key={tool} className="px-2.5 py-1 bg-secondary text-xs font-medium rounded-sm border border-border/50">
+                        {tool}
+                      </span>
+                    ))}
+                  </div>
                 </div>
+
+                {/* Active Lifestyle Card */}
+                <div className="p-6 bg-card border border-border rounded-sm hover:border-foreground/20 transition-colors flex flex-col justify-center">
+                  <h3 className="text-xl font-bold mb-2">Active Lifestyle</h3>
+                  <p className="text-muted-foreground leading-relaxed text-sm">
+                    Enthusiast of sports and various dynamic activities.
+                  </p>
+                </div>
+
+                {/* Animal Lover Card */}
+                <div className="p-6 bg-card border border-border rounded-sm hover:border-foreground/20 transition-colors flex flex-col justify-center">
+                  <h3 className="text-xl font-bold mb-2">Animal Lover</h3>
+                  <p className="text-muted-foreground leading-relaxed text-sm">
+                    Passionate about animal welfare.
+                  </p>
+                </div>
+
+                {/* Music Enthusiast Card */}
+                <div className="p-6 bg-card border border-border rounded-sm hover:border-foreground/20 transition-colors flex flex-col justify-center">
+                  <h3 className="text-xl font-bold mb-2">Music Enthusiast</h3>
+                  <p className="text-muted-foreground leading-relaxed text-sm">
+                    Enjoying and appreciating music.
+                  </p>
+                </div>
+
               </div>
             </div>
           </motion.div>
