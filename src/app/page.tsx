@@ -269,16 +269,7 @@ export default function Home() {
             viewport={{ once: true }}
             className="space-y-12"
           >
-            <div className="space-y-3">
-              <h2 className="text-3xl font-bold tracking-tight mb-4">Tools</h2>
-              <div className="flex flex-wrap gap-2">
-                {["Flutter", "Dart", "React", "Python", "Java", "Git", "Vercel"].map(tool => (
-                  <span key={tool} className="px-2.5 py-1 bg-secondary text-xs font-medium rounded-sm border border-border/50">
-                    {tool}
-                  </span>
-                ))}
-              </div>
-            </div>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-12">Extracurricular</h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               <div className="space-y-8">
@@ -311,6 +302,20 @@ export default function Home() {
                     <h3 className="text-xl font-bold mb-1">Canaan Farmers School</h3>
                     <p className="text-muted-foreground">Community Service</p>
                   </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-12 space-y-6">
+              <h2 className="text-3xl font-bold tracking-tight">Hobbies</h2>
+              <div className="space-y-3">
+                <h3 className="text-xl font-bold">Tools</h3>
+                <div className="flex flex-wrap gap-2">
+                  {["Flutter", "Dart", "React", "Python", "Java", "Git", "Vercel"].map(tool => (
+                    <span key={tool} className="px-2.5 py-1 bg-secondary text-xs font-medium rounded-sm border border-border/50">
+                      {tool}
+                    </span>
+                  ))}
                 </div>
               </div>
             </div>
