@@ -12,14 +12,17 @@ interface ProjectCardProps {
     github?: string;
     year?: string;
     category?: string;
+    files?: { name: string; url: string }[];
+    onClick?: () => void;
 }
 
-export function ProjectCard({ title, description, tags, link, github, year, category }: ProjectCardProps) {
+export function ProjectCard({ title, description, tags, link, github, year, category, files, onClick }: ProjectCardProps) {
     return (
         <motion.div
             whileHover={{ y: -5 }}
             transition={{ type: "spring", stiffness: 300 }}
-            className="group relative flex flex-col justify-between p-6 h-full bg-card border border-border/50 hover:border-foreground/20 transition-colors"
+            className={`group relative flex flex-col justify-between p-6 h-full bg-card border border-border/50 transition-colors ${onClick ? "cursor-pointer hover:border-foreground/40" : "hover:border-foreground/20"}`}
+            onClick={onClick}
         >
             <div>
                 <div className="flex justify-between items-start mb-4">
@@ -41,7 +44,7 @@ export function ProjectCard({ title, description, tags, link, github, year, cate
                     </div>
                 </div>
 
-                <p className="text-muted-foreground text-sm leading-relaxed mb-6">
+                <p className="text-muted-foreground text-sm leading-relaxed mb-6 line-clamp-3">
                     {description}
                 </p>
             </div>
