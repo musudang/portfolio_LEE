@@ -47,18 +47,18 @@ export default function Home() {
                 <h1 className="text-4xl md:text-6xl font-bold tracking-tighter mb-4">
                   Seung Hun, Lee
                 </h1>
-                <p className="text-xl text-muted-foreground">
+                <p className="text-lg text-muted-foreground">
                   Food & Resource Economics / Climate Change
                 </p>
               </div>
 
-              <div className="space-y-4 text-lg leading-relaxed max-w-lg text-foreground/80">
+              <div className="space-y-4 text-base leading-relaxed max-w-lg text-foreground/80">
                 <p>
                   I'm a senior student passionate about <span className="text-foreground font-medium">environmental economics</span> and <span className="text-foreground font-medium">entrepreneurship</span>.
                 </p>
                 <div className="pt-4">
                   <h3 className="text-xs font-mono text-muted-foreground mb-3 uppercase tracking-widest">Abroad Experience</h3>
-                  <div className="grid grid-cols-2 gap-4 text-sm">
+                  <div className="grid grid-cols-2 gap-4 text-xs">
                     <div>
                       <h4 className="font-bold mb-1">Indonesia</h4>
                       <p className="text-muted-foreground">(2002-2020)</p>
@@ -88,7 +88,7 @@ export default function Home() {
 
               <div className="pt-6 border-t border-border">
                 <h3 className="text-xs font-mono text-muted-foreground mb-3 uppercase tracking-widest">Languages</h3>
-                <div className="flex flex-wrap gap-x-4 gap-y-2 text-sm">
+                <div className="flex flex-wrap gap-x-4 gap-y-2 text-xs">
                   <span className="font-medium">Korean (Native)</span>
                   <span className="text-muted-foreground">/</span>
                   <span className="font-medium">English (Fluent)</span>
