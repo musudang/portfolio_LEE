@@ -31,9 +31,9 @@ export function Navbar() {
             className={`fixed top-0 right-0 left-0 z-50 transition-all duration-300 ${scrolled ? "bg-background/80 backdrop-blur-md border-b border-border py-2" : "bg-transparent py-4"
                 }`}
         >
-            <div className="container mx-auto flex items-center justify-between px-6 lg:px-12">
+            <div className="w-full flex items-center justify-between px-8 md:px-16 lg:px-24">
                 {/* Logo */}
-                <Link href="/" className="text-2xl font-bold tracking-tighter hover:opacity-80 transition-opacity">
+                <Link href="/" className="text-4xl font-extrabold tracking-tighter hover:opacity-80 transition-opacity">
                     MUSUDANG
                 </Link>
 
@@ -44,7 +44,7 @@ export function Navbar() {
                             <Link
                                 key={link.name}
                                 href={link.href}
-                                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors relative group"
+                                className="text-lg font-medium text-muted-foreground hover:text-foreground transition-colors relative group"
                             >
                                 {link.name}
                                 <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-foreground transition-all group-hover:w-full" />
