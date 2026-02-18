@@ -25,7 +25,7 @@ export default function Home() {
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="relative aspect-[3/4] md:aspect-square bg-secondary rounded-sm overflow-hidden"
+              className="relative aspect-[3/4] md:aspect-square bg-secondary rounded-sm overflow-hidden w-[95%] mx-auto"
             >
               <Image
                 src="/profile.png"
