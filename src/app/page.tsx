@@ -41,7 +41,7 @@ export default function Home() {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="space-y-6"
+              className="space-y-5"
             >
               <div>
                 <h1 className="text-4xl md:text-6xl font-bold tracking-tighter mb-4">
@@ -73,9 +73,9 @@ export default function Home() {
 
               <div className="pt-2">
                 <h3 className="text-xs font-mono text-muted-foreground mb-3 uppercase tracking-widest">Contact</h3>
-                <div className="flex gap-4 items-center">
+                <div className="flex gap-4 items-center text-sm">
                   <Link href="#contact" className="p-2 bg-secondary rounded-full text-foreground hover:bg-foreground hover:text-background transition-colors">
-                    <Phone size={16} />
+                    <Phone size={14} />
                   </Link>
                   <a href="https://www.instagram.com/raphaelseunghunlee/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
                     Instagram
