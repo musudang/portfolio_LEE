@@ -33,7 +33,7 @@ export function Navbar() {
         >
             <div className="container mx-auto flex items-center justify-between px-6 lg:px-12">
                 {/* Logo */}
-                <Link href="/" className="text-2xl font-bold tracking-tighter hover:opacity-80 transition-opacity">
+                <Link href="/" className="text-3xl font-black tracking-tighter hover:opacity-80 transition-opacity">
                     MUSUDANG
                 </Link>
 
@@ -44,7 +44,7 @@ export function Navbar() {
                             <Link
                                 key={link.name}
                                 href={link.href}
-                                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors relative group"
+                                className="text-base font-medium text-muted-foreground hover:text-foreground transition-colors relative group"
                             >
                                 {link.name}
                                 <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-foreground transition-all group-hover:w-full" />
