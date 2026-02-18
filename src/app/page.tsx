@@ -44,7 +44,7 @@ export default function Home() {
               className="space-y-6"
             >
               <div>
-                <h1 className="text-5xl md:text-7xl font-bold tracking-tighter mb-4">
+                <h1 className="text-4xl md:text-6xl font-bold tracking-tighter mb-4">
                   Seung Hun, Lee
                 </h1>
                 <p className="text-xl text-muted-foreground">
