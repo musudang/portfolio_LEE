@@ -52,10 +52,10 @@ export default function Home() {
       title: "Memory",
       description: "Description for the Memory project.",
       tags: ["Web", "Platform"],
-      link: "#",
-      linkName: "Primary Link",
+      link: "https://www.instagram.com/memory_meet_space/",
+      linkName: "Instagram",
       customLinks: [
-        { name: "Secondary Link", url: "#" }
+        { name: "Website", url: "https://www.memorymeet.space/" }
       ],
       year: "2026",
       category: "Web Platform",
