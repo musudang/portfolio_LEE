@@ -50,7 +50,7 @@ export default function Home() {
     },
     {
       title: "Memory",
-      description: "Description for the Memory project.",
+      description: "A trusted local social platform that lowers the psychological barriers of traditional dating apps, connecting the 4050 generation through wholesome, everyday touchpoints.",
       tags: ["Web", "Platform"],
       link: "https://www.instagram.com/memory_meet_space/",
       linkName: "Instagram",
