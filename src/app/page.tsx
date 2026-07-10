@@ -4,7 +4,7 @@ import { Navbar } from "@/components/Navbar";
 import { ProjectCard } from "@/components/ProjectCard";
 import { Timeline } from "@/components/Timeline";
 import { motion, AnimatePresence } from "framer-motion";
-import { Github, Linkedin, Mail, MapPin, Phone, Code, Dumbbell, Dog, Music, Play, X, FileText, ArrowUpRight } from "lucide-react";
+import { Github, Linkedin, Mail, MapPin, Phone, Code, Dumbbell, Dog, Music, Play, X, FileText, ArrowUpRight, Image as ImageIcon } from "lucide-react";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -19,6 +19,7 @@ interface Project {
   category?: string;
   files?: { name: string; url: string }[];
   customLinks?: { name: string; url: string }[];
+  media?: { type: "image" | "video"; url: string }[];
 }
 
 export default function Home() {
@@ -36,6 +37,10 @@ export default function Home() {
       ],
       year: "2026",
       category: "App Dev",
+      media: [
+        { type: "image", url: "/internship.jpg" },
+        { type: "image", url: "/canaan_farmers.jpg" }
+      ],
       files: [
         { name: "TEMAN Presentation", url: "/files/TEMAN_presentation.pdf.pdf" },
         { name: "TEMAN Document", url: "/files/TEMAN_presentation.pdf1.pdf" }
@@ -662,6 +667,7 @@ function ContactForm() {
 
 function ProjectModal({ project, onClose }: { project: Project; onClose: () => void }) {
   const [selectedFile, setSelectedFile] = useState<string | null>(null);
+  const [showGallery, setShowGallery] = useState(false);
 
   // Close when clicking outside or pressing Escape
   useEffect(() => {
@@ -753,6 +759,25 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
               </div>
             )}
 
+            {/* Photos & Videos */}
+            {project.media && project.media.length > 0 && (
+              <div className="space-y-3 pt-4 border-t border-border">
+                <h3 className="text-lg font-bold">Photos & Videos</h3>
+                <button
+                  onClick={() => { setSelectedFile(null); setShowGallery(true); }}
+                  className={`w-full flex items-center gap-3 p-3 rounded-md border text-left transition-all ${showGallery ? "bg-secondary border-foreground" : "bg-card border-border hover:border-foreground/50"}`}
+                >
+                  <div className="p-2 bg-background rounded-sm border border-border">
+                    <ImageIcon size={20} className="text-pink-500" />
+                  </div>
+                  <div className="flex-1 overflow-hidden">
+                    <p className="font-medium text-sm truncate">View Gallery</p>
+                    <p className="text-xs text-muted-foreground">{project.media.length} items</p>
+                  </div>
+                </button>
+              </div>
+            )}
+
             {/* Files List */}
             {project.files && project.files.length > 0 && (
               <div className="space-y-3 pt-4 border-t border-border">
@@ -761,8 +786,8 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
                   {project.files.map((file, idx) => (
                     <button
                       key={idx}
-                      onClick={() => setSelectedFile(file.url)}
-                      className={`w-full flex items-center gap-3 p-3 rounded-md border text-left transition-all ${selectedFile === file.url ? "bg-secondary border-foreground" : "bg-card border-border hover:border-foreground/50"}`}
+                      onClick={() => { setShowGallery(false); setSelectedFile(file.url); }}
+                      className={`w-full flex items-center gap-3 p-3 rounded-md border text-left transition-all ${!showGallery && selectedFile === file.url ? "bg-secondary border-foreground" : "bg-card border-border hover:border-foreground/50"}`}
                     >
                       <div className="p-2 bg-background rounded-sm border border-border">
                         <FileText size={20} className="text-blue-500" />
@@ -780,7 +805,19 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
 
           {/* Preview Area */}
           <div className="lg:col-span-2 bg-secondary/30 rounded-lg border border-border overflow-hidden min-h-[600px] flex flex-col">
-            {selectedFile ? (
+            {showGallery && project.media ? (
+              <div className="flex-1 overflow-auto p-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+                {project.media.map((m, idx) => (
+                  <div key={idx} className="relative aspect-square bg-black/5 rounded-md overflow-hidden border border-border">
+                    {m.type === "image" ? (
+                      <img src={m.url} alt={`Media ${idx}`} className="w-full h-full object-contain" />
+                    ) : (
+                      <video src={m.url} controls className="w-full h-full object-contain" />
+                    )}
+                  </div>
+                ))}
+              </div>
+            ) : selectedFile ? (
               <iframe
                 src={selectedFile}
                 className="w-full h-full min-h-[70vh]"
@@ -789,7 +826,7 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
             ) : (
               <div className="flex-1 flex flex-col items-center justify-center text-muted-foreground p-8">
                 <FileText size={48} className="mb-4 opacity-20" />
-                <p>Select a file to preview</p>
+                <p>Select a file or gallery to preview</p>
               </div>
             )}
           </div>
