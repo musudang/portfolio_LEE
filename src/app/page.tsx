@@ -49,6 +49,24 @@ export default function Home() {
       ]
     },
     {
+      title: "Memory",
+      description: "Description for the Memory project.",
+      tags: ["Web", "Platform"],
+      link: "#",
+      linkName: "Primary Link",
+      customLinks: [
+        { name: "Secondary Link", url: "#" }
+      ],
+      year: "2026",
+      category: "Web Platform",
+      media: [
+        { type: "image", url: "/internship.jpg" }
+      ],
+      files: [
+        { name: "Memory Document", url: "#" }
+      ]
+    },
+    {
       title: "FRESC LEAP",
       description: "Carbon emission tracking and reduction project. Applying economic models to environmental data.",
       tags: ["Research", "Climate Economics", "Data Analysis"],
