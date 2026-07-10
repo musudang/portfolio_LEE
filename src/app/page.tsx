@@ -95,7 +95,7 @@ export default function Home() {
       year: "2026",
       category: "Research",
       files: [
-        { name: "Research Paper", url: "/files/2026+환경법규+보고서+2021140663+이승훈.hwp.pdf" }
+        { name: "Research Paper", url: "/files/Environmental_Law_and_Regulations_Report.pdf" }
       ]
     },
     {
