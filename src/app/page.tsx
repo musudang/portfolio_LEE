@@ -26,6 +26,18 @@ export default function Home() {
 
   const projects: Project[] = [
     {
+      title: "TEMAN",
+      description: "A community application for foreigners in Korea. Bridging cultural gaps through technology.",
+      tags: ["Flutter", "Firebase", "Community"],
+      link: "https://teman.space",
+      customLinks: [
+        { name: "App Store", url: "https://apps.apple.com/kr/app/teman-universities-in-seoul/id6768842296" },
+        { name: "Instagram", url: "https://www.instagram.com/teman_community/" }
+      ],
+      year: "2026",
+      category: "App Dev"
+    },
+    {
       title: "FRESC LEAP",
       description: "Carbon emission tracking and reduction project. Applying economic models to environmental data.",
       tags: ["Research", "Climate Economics", "Data Analysis"],
@@ -56,22 +68,6 @@ export default function Home() {
       files: [
         { name: "Training Presentation", url: "/files/Investment_Expert_Training_presentation.pdf" },
         { name: "Training Paper", url: "/files/Investment_Expert_Training_paper.pdf" }
-      ]
-    },
-    {
-      title: "TEMAN",
-      description: "A community application for foreigners in Korea. Bridging cultural gaps through technology.",
-      tags: ["Flutter", "Firebase", "Community"],
-      link: "https://teman.space",
-      customLinks: [
-        { name: "application_detail", url: "https://iris-tank-0cf.notion.site/TEMAN-2f9d16a0171980c1993bc631264d9e6d?source=copy_link" },
-        { name: "App Store", url: "https://apps.apple.com/kr/app/teman-universities-in-seoul/id6768842296" },
-        { name: "Instagram", url: "https://www.instagram.com/teman_community/" }
-      ],
-      year: "2026",
-      category: "App Dev",
-      files: [
-        { name: "Instagram Profile", url: "https://www.instagram.com/teman_community/" }
       ]
     },
     {
