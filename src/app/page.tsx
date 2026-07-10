@@ -62,12 +62,17 @@ export default function Home() {
       title: "TEMAN",
       description: "A community application for foreigners in Korea. Bridging cultural gaps through technology.",
       tags: ["Flutter", "Firebase", "Community"],
-      link: "https://connect-korea--musudang41.replit.app",
+      link: "https://teman.space",
       customLinks: [
-        { name: "application_detail", url: "https://iris-tank-0cf.notion.site/TEMAN-2f9d16a0171980c1993bc631264d9e6d?source=copy_link" }
+        { name: "application_detail", url: "https://iris-tank-0cf.notion.site/TEMAN-2f9d16a0171980c1993bc631264d9e6d?source=copy_link" },
+        { name: "App Store", url: "https://apps.apple.com/kr/app/teman-universities-in-seoul/id6768842296" },
+        { name: "Instagram", url: "https://www.instagram.com/teman_community/" }
       ],
       year: "2026",
-      category: "App Dev"
+      category: "App Dev",
+      files: [
+        { name: "Instagram Profile", url: "https://www.instagram.com/teman_community/" }
+      ]
     },
     {
       title: "Surfly.info",
