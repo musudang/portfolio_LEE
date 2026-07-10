@@ -35,7 +35,10 @@ export default function Home() {
         { name: "Instagram", url: "https://www.instagram.com/teman_community/" }
       ],
       year: "2026",
-      category: "App Dev"
+      category: "App Dev",
+      files: [
+        { name: "TEMAN Presentation", url: "/files/TEMAN_presentation.pdf" }
+      ]
     },
     {
       title: "FRESC LEAP",
