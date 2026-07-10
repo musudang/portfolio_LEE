@@ -15,6 +15,7 @@ interface Project {
   description: string;
   tags: string[];
   link?: string;
+  linkName?: string;
   year?: string;
   category?: string;
   files?: { name: string; url: string }[];
@@ -30,10 +31,11 @@ export default function Home() {
       title: "TEMAN",
       description: "A community application for foreigners in Korea. Bridging cultural gaps through technology.",
       tags: ["Flutter", "Firebase", "Community"],
-      link: "https://teman.space",
+      link: "https://www.instagram.com/teman_community/",
+      linkName: "Instagram",
       customLinks: [
-        { name: "App Store", url: "https://apps.apple.com/kr/app/teman-universities-in-seoul/id6768842296" },
-        { name: "Instagram", url: "https://www.instagram.com/teman_community/" }
+        { name: "Website", url: "https://teman.space" },
+        { name: "App Store", url: "https://apps.apple.com/kr/app/teman-universities-in-seoul/id6768842296" }
       ],
       year: "2026",
       category: "App Dev",
@@ -743,7 +745,7 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
                   rel="noopener noreferrer"
                   className="w-full flex items-center justify-center gap-2 bg-foreground text-background font-medium py-3 rounded-md hover:opacity-90 transition-opacity"
                 >
-                  Visit Project <ArrowUpRight size={16} />
+                  {project.linkName || "Visit Project"} <ArrowUpRight size={16} />
                 </a>
                 {project.customLinks && project.customLinks.map((link, idx) => (
                   <a
