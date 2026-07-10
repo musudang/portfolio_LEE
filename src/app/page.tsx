@@ -37,7 +37,8 @@ export default function Home() {
       year: "2026",
       category: "App Dev",
       files: [
-        { name: "TEMAN Presentation", url: "/files/TEMAN_presentation.pdf" }
+        { name: "TEMAN Presentation", url: "/files/TEMAN_presentation.pdf.pptx" },
+        { name: "TEMAN Document", url: "/files/TEMAN_presentation.pdf1.docx" }
       ]
     },
     {
