@@ -89,6 +89,16 @@ export default function Home() {
       ]
     },
     {
+      title: "Environmental Law and Regulations Report",
+      description: "Research paper analyzing environmental regulations and policy frameworks.",
+      tags: ["Research", "Environmental Law", "Policy"],
+      year: "2026",
+      category: "Research",
+      files: [
+        { name: "Research Paper", url: "/files/2026+환경법규+보고서+2021140663+이승훈.hwp.pdf" }
+      ]
+    },
+    {
       title: "Investment Expert Training",
       description: "Agricultural Investor Starter: Agriculture, Fisheries and Food Industry.",
       tags: ["Finance", "Agriculture", "Analysis"],
@@ -112,7 +122,7 @@ export default function Home() {
       description: "Army Startup Competition entry. An innovative information marketplace solution.",
       tags: ["Startup", "Business Plan", "MVP"],
       year: "2023",
-      category: "Startup",
+      category: "Startup-Contest",
       files: [
         { name: "Paper", url: "/files/INFOSELLER_PAPER.pdf" },
         { name: "Presentation", url: "/files/INFOSELLER_PRESENTATION.pdf" }
@@ -120,10 +130,10 @@ export default function Home() {
     },
     {
       title: "Food Marketing Strategy",
-      description: "Strategic marketing portfolio and project presentation.",
+      description: "Bibigo's marketing strategy proposal with economic interpretation.",
       tags: ["Marketing", "Strategy", "PPT"],
       year: "2025",
-      category: "Business",
+      category: "Marketing",
       files: [
         { name: "Strategy Presentation", url: "/files/FOOD_MARKETING_STRATEGY.pdf" }
       ]
@@ -133,7 +143,7 @@ export default function Home() {
       description: "Fitting Room (platform service business).",
       tags: ["Startup", "Business", "Platform"],
       year: "2023",
-      category: "Startup",
+      category: "Startup-Contest",
       files: [
         { name: "Contest Paper", url: "/files/KT&G_STARTUP_CONTEST_PAPER.pdf" },
         { name: "Presentation", url: "/files/KT&G_STARTUP_CONTEST_PRESENTATION.pdf" }
