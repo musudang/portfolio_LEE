@@ -20,7 +20,7 @@ interface Project {
   category?: string;
   files?: { name: string; url: string }[];
   customLinks?: { name: string; url: string }[];
-  media?: { type: "image" | "video"; url: string }[];
+  media?: { type: "image" | "video" | "youtube"; url: string; name?: string }[];
 }
 
 export default function Home() {
@@ -40,8 +40,17 @@ export default function Home() {
       year: "2026",
       category: "App Dev",
       media: [
-        { type: "image", url: "/internship.jpg" },
-        { type: "image", url: "/canaan_farmers.jpg" }
+        { type: "youtube", url: "https://www.youtube.com/embed/KESyazRZfJs", name: "Party ads" },
+        { type: "image", url: "/TEMAN/KakaoTalk_20260503_145148805.jpg" },
+        { type: "image", url: "/TEMAN/KakaoTalk_20260503_145148805_01.jpg" },
+        { type: "image", url: "/TEMAN/KakaoTalk_20260503_145148805_02.jpg" },
+        { type: "image", url: "/TEMAN/KakaoTalk_20260503_145148805_03.jpg" },
+        { type: "image", url: "/TEMAN/KakaoTalk_20260503_145148805_04.jpg" },
+        { type: "image", url: "/TEMAN/KakaoTalk_20260503_145148805_05.jpg" },
+        { type: "image", url: "/TEMAN/KakaoTalk_20260503_145148805_06.jpg" },
+        { type: "image", url: "/TEMAN/KakaoTalk_20260503_145148805_07.jpg" },
+        { type: "image", url: "/TEMAN/KakaoTalk_20260503_145148805_09.jpg" },
+        { type: "image", url: "/TEMAN/logo.png" }
       ],
       files: [
         { name: "TEMAN Presentation", url: "/files/TEMAN_presentation.pdf.pdf" },
@@ -697,7 +706,7 @@ function ContactForm() {
 
 function ProjectModal({ project, onClose }: { project: Project; onClose: () => void }) {
   const [selectedFile, setSelectedFile] = useState<string | null>(null);
-  const [showGallery, setShowGallery] = useState(false);
+  const [showGallery, setShowGallery] = useState(project.title === "TEMAN");
 
   // Close when clicking outside or pressing Escape
   useEffect(() => {
@@ -839,8 +848,15 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
               <div className="flex-1 overflow-auto p-6 grid grid-cols-1 md:grid-cols-2 gap-4">
                 {project.media.map((m, idx) => (
                   <div key={idx} className="relative aspect-square bg-black/5 rounded-md overflow-hidden border border-border">
+                    {m.name && (
+                      <div className="absolute top-0 left-0 right-0 bg-black/60 text-white p-2 text-sm font-medium z-10">
+                        {m.name}
+                      </div>
+                    )}
                     {m.type === "image" ? (
-                      <img src={m.url} alt={`Media ${idx}`} className="w-full h-full object-contain" />
+                      <img src={m.url} alt={m.name || `Media ${idx}`} className="w-full h-full object-contain" />
+                    ) : m.type === "youtube" ? (
+                      <iframe src={m.url} className="w-full h-full" allowFullScreen title={m.name || "YouTube Video"} />
                     ) : (
                       <video src={m.url} controls className="w-full h-full object-contain" />
                     )}

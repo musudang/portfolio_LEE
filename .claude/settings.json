@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node explore5.js)",
+      "Bash(node explore6.js)",
+      "Bash(node crawl-projects.js)",
+      "Read(//c/Users/user/OneDrive/Desktop/Portfolio-Documentation/**)"
+    ]
+  }
+}
