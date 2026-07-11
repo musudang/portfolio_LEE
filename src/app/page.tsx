@@ -197,9 +197,22 @@ export default function Home() {
                 <h1 className="text-6xl md:text-8xl font-bold tracking-tighter mb-4">
                   Seung Hun, Lee
                 </h1>
-                <p className="text-2xl text-muted-foreground">
-                  Food & Resource Economics / Climate Change
-                </p>
+                <div className="flex items-center flex-wrap gap-3 text-xl md:text-2xl text-muted-foreground mb-2">
+                  <div className="flex items-center gap-2 text-foreground">
+                    {/* 고려대학교 로고 이미지를 public 폴더에 추가하고 파일명을 맞추세요 (예: korea-univ-logo.png) */}
+                    <div className="relative w-8 h-8 md:w-10 md:h-10">
+                      <Image 
+                        src="/korea-univ-logo.png" 
+                        alt="Korea University Logo" 
+                        fill
+                        className="object-contain"
+                      />
+                    </div>
+                    <span className="font-bold tracking-tight">KOREA UNIV</span>
+                  </div>
+                  <span className="hidden md:inline text-border">|</span>
+                  <span>Food & Resource Economics / Climate Change</span>
+                </div>
               </div>
 
               <div className="space-y-6 text-xl leading-relaxed max-w-2xl text-foreground/80">
