@@ -198,8 +198,7 @@ export default function Home() {
                   Seung Hun, Lee
                 </h1>
                 <div className="flex items-center flex-wrap gap-3 text-xl md:text-2xl text-muted-foreground mb-2">
-                  <div className="flex items-center gap-2 text-foreground">
-                    {/* 고려대학교 로고 이미지를 public 폴더에 추가하고 파일명을 맞추세요 (예: korea-univ-logo.png) */}
+                  <div className="flex items-center gap-2">
                     <div className="relative w-8 h-8 md:w-10 md:h-10">
                       <Image 
                         src="/korea-univ-logo.png" 
@@ -208,7 +207,7 @@ export default function Home() {
                         className="object-contain"
                       />
                     </div>
-                    <span className="font-bold tracking-tight">KOREA UNIV</span>
+                    <span>KOREA UNIV</span>
                   </div>
                   <span className="hidden md:inline text-border">|</span>
                   <span>Food & Resource Economics / Climate Change</span>
