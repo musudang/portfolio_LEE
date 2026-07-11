@@ -706,7 +706,9 @@ function ContactForm() {
 
 function ProjectModal({ project, onClose }: { project: Project; onClose: () => void }) {
   const [selectedFile, setSelectedFile] = useState<string | null>(null);
-  const [showGallery, setShowGallery] = useState(project.title === "TEMAN");
+  const defaultVideo = project.title === "TEMAN" ? project.media?.find(m => m.type === "youtube" || m.type === "video")?.url || null : null;
+  const [selectedVideo, setSelectedVideo] = useState<string | null>(defaultVideo);
+  const [showGallery, setShowGallery] = useState(false);
 
   // Close when clicking outside or pressing Escape
   useEffect(() => {
@@ -802,18 +804,35 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
             {project.media && project.media.length > 0 && (
               <div className="space-y-3 pt-4 border-t border-border">
                 <h3 className="text-lg font-bold">Photos & Videos</h3>
-                <button
-                  onClick={() => { setSelectedFile(null); setShowGallery(true); }}
-                  className={`w-full flex items-center gap-3 p-3 rounded-md border text-left transition-all ${showGallery ? "bg-secondary border-foreground" : "bg-card border-border hover:border-foreground/50"}`}
-                >
-                  <div className="p-2 bg-background rounded-sm border border-border">
-                    <ImageIcon size={20} className="text-pink-500" />
-                  </div>
-                  <div className="flex-1 overflow-hidden">
-                    <p className="font-medium text-sm truncate">View Gallery</p>
-                    <p className="text-xs text-muted-foreground">{project.media.length} items</p>
-                  </div>
-                </button>
+                {project.media.filter(m => m.type === "youtube" || m.type === "video").map((v, idx) => (
+                  <button
+                    key={`vid-${idx}`}
+                    onClick={() => { setSelectedFile(null); setShowGallery(false); setSelectedVideo(v.url); }}
+                    className={`w-full flex items-center gap-3 p-3 rounded-md border text-left transition-all ${!showGallery && !selectedFile && selectedVideo === v.url ? "bg-secondary border-foreground" : "bg-card border-border hover:border-foreground/50"}`}
+                  >
+                    <div className="p-2 bg-background rounded-sm border border-border">
+                      <Play size={20} className="text-red-500" />
+                    </div>
+                    <div className="flex-1 overflow-hidden">
+                      <p className="font-medium text-sm truncate">{v.name || "View Video"}</p>
+                      <p className="text-xs text-muted-foreground">Video Gallery</p>
+                    </div>
+                  </button>
+                ))}
+                {project.media.filter(m => m.type === "image").length > 0 && (
+                  <button
+                    onClick={() => { setSelectedFile(null); setSelectedVideo(null); setShowGallery(true); }}
+                    className={`w-full flex items-center gap-3 p-3 rounded-md border text-left transition-all ${showGallery ? "bg-secondary border-foreground" : "bg-card border-border hover:border-foreground/50"}`}
+                  >
+                    <div className="p-2 bg-background rounded-sm border border-border">
+                      <ImageIcon size={20} className="text-pink-500" />
+                    </div>
+                    <div className="flex-1 overflow-hidden">
+                      <p className="font-medium text-sm truncate">View Gallery</p>
+                      <p className="text-xs text-muted-foreground">{project.media.filter(m => m.type === "image").length} items</p>
+                    </div>
+                  </button>
+                )}
               </div>
             )}
 
@@ -825,7 +844,7 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
                   {project.files.map((file, idx) => (
                     <button
                       key={idx}
-                      onClick={() => { setShowGallery(false); setSelectedFile(file.url); }}
+                      onClick={() => { setShowGallery(false); setSelectedVideo(null); setSelectedFile(file.url); }}
                       className={`w-full flex items-center gap-3 p-3 rounded-md border text-left transition-all ${!showGallery && selectedFile === file.url ? "bg-secondary border-foreground" : "bg-card border-border hover:border-foreground/50"}`}
                     >
                       <div className="p-2 bg-background rounded-sm border border-border">
@@ -846,23 +865,24 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
           <div className="lg:col-span-2 bg-secondary/30 rounded-lg border border-border overflow-hidden min-h-[600px] flex flex-col">
             {showGallery && project.media ? (
               <div className="flex-1 overflow-auto p-6 grid grid-cols-1 md:grid-cols-2 gap-4">
-                {project.media.map((m, idx) => (
-                  <div key={idx} className="relative aspect-square bg-black/5 rounded-md overflow-hidden border border-border">
+                {project.media.filter(m => m.type === "image").map((m, idx) => (
+                  <div key={idx} className="relative w-full aspect-square bg-black/5 rounded-md overflow-hidden border border-border">
                     {m.name && (
                       <div className="absolute top-0 left-0 right-0 bg-black/60 text-white p-2 text-sm font-medium z-10">
                         {m.name}
                       </div>
                     )}
-                    {m.type === "image" ? (
-                      <img src={m.url} alt={m.name || `Media ${idx}`} className="w-full h-full object-contain" />
-                    ) : m.type === "youtube" ? (
-                      <iframe src={m.url} className="w-full h-full" allowFullScreen title={m.name || "YouTube Video"} />
-                    ) : (
-                      <video src={m.url} controls className="w-full h-full object-contain" />
-                    )}
+                    <img src={m.url} alt={m.name || `Media ${idx}`} className="absolute inset-0 w-full h-full object-contain" />
                   </div>
                 ))}
               </div>
+            ) : selectedVideo ? (
+              <iframe
+                src={selectedVideo}
+                className="w-full h-full min-h-[70vh]"
+                allowFullScreen
+                title="Video Preview"
+              />
             ) : selectedFile ? (
               <iframe
                 src={selectedFile}
