@@ -4,7 +4,7 @@ import { Navbar } from "@/components/Navbar";
 import { ProjectCard } from "@/components/ProjectCard";
 import { Timeline } from "@/components/Timeline";
 import { motion, AnimatePresence } from "framer-motion";
-import { Github, Linkedin, Mail, MapPin, Phone, Code, Dumbbell, Dog, Music, Play, X, FileText, ArrowUpRight, Image as ImageIcon } from "lucide-react";
+import { Github, Linkedin, Mail, MapPin, Phone, Code, Dumbbell, Dog, Music, Play, X, FileText, ArrowUpRight, Image as ImageIcon, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -721,6 +721,9 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
   const defaultVideo = project.title === "TEMAN" ? project.media?.find(m => m.type === "youtube" || m.type === "video")?.url || null : null;
   const [selectedVideo, setSelectedVideo] = useState<string | null>(defaultVideo);
   const [showGallery, setShowGallery] = useState(false);
+  const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
+
+  const imageMedia = project.media?.filter(m => m.type === "image") || [];
 
   // Close when clicking outside or pressing Escape
   useEffect(() => {
@@ -833,7 +836,7 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
                 ))}
                 {project.media.filter(m => m.type === "image").length > 0 && (
                   <button
-                    onClick={() => { setSelectedFile(null); setSelectedVideo(null); setShowGallery(true); }}
+                    onClick={() => { setSelectedFile(null); setSelectedVideo(null); setShowGallery(true); setSelectedImageIndex(null); }}
                     className={`w-full flex items-center gap-3 p-3 rounded-md border text-left transition-all ${showGallery ? "bg-secondary border-foreground" : "bg-card border-border hover:border-foreground/50"}`}
                   >
                     <div className="p-2 bg-background rounded-sm border border-border">
@@ -876,17 +879,56 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
           {/* Preview Area */}
           <div className="lg:col-span-2 bg-secondary/30 rounded-lg border border-border overflow-hidden min-h-[600px] flex flex-col">
             {showGallery && project.media ? (
-              <div className="flex-1 overflow-auto p-6 grid grid-cols-1 md:grid-cols-2 gap-4">
-                {project.media.filter(m => m.type === "image").map((m, idx) => (
-                  <div key={idx} className="relative w-full aspect-square bg-black/5 rounded-md overflow-hidden border border-border">
-                    {m.name && (
-                      <div className="absolute top-0 left-0 right-0 bg-black/60 text-white p-2 text-sm font-medium z-10">
-                        {m.name}
-                      </div>
-                    )}
-                    <img src={m.url} alt={m.name || `Media ${idx}`} className="absolute inset-0 w-full h-full object-contain" />
+              <div className="flex-1 flex flex-col overflow-hidden">
+                {selectedImageIndex !== null ? (
+                  <div className="relative flex-1 flex flex-col items-center justify-center bg-black/5 p-4">
+                    <button onClick={() => setSelectedImageIndex(null)} className="absolute top-4 right-4 z-20 p-2 bg-background/80 text-foreground rounded-full hover:bg-background border border-border transition-colors">
+                      <X size={20} />
+                    </button>
+                    <button 
+                      onClick={() => setSelectedImageIndex((prev) => (prev! > 0 ? prev! - 1 : imageMedia.length - 1))}
+                      className="absolute left-4 top-1/2 -translate-y-1/2 z-20 p-2 bg-background/80 text-foreground rounded-full hover:bg-background border border-border transition-colors"
+                    >
+                      <ChevronLeft size={24} />
+                    </button>
+                    <button 
+                      onClick={() => setSelectedImageIndex((prev) => (prev! < imageMedia.length - 1 ? prev! + 1 : 0))}
+                      className="absolute right-4 top-1/2 -translate-y-1/2 z-20 p-2 bg-background/80 text-foreground rounded-full hover:bg-background border border-border transition-colors"
+                    >
+                      <ChevronRight size={24} />
+                    </button>
+                    
+                    <div className="relative w-full h-full flex items-center justify-center">
+                      <img 
+                        src={imageMedia[selectedImageIndex].url} 
+                        alt={imageMedia[selectedImageIndex].name || `Media ${selectedImageIndex}`} 
+                        className="max-w-full max-h-full object-contain"
+                      />
+                      {imageMedia[selectedImageIndex].name && (
+                        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-background/80 backdrop-blur-sm border border-border text-foreground px-4 py-2 rounded-md text-sm font-medium">
+                          {imageMedia[selectedImageIndex].name}
+                        </div>
+                      )}
+                    </div>
                   </div>
-                ))}
+                ) : (
+                  <div className="flex-1 overflow-auto p-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                    {imageMedia.map((m, idx) => (
+                      <div 
+                        key={idx} 
+                        onClick={() => setSelectedImageIndex(idx)}
+                        className="relative w-full aspect-square bg-black/5 rounded-md overflow-hidden border border-border cursor-pointer hover:opacity-90 hover:border-foreground/50 transition-all"
+                      >
+                        {m.name && (
+                          <div className="absolute top-0 left-0 right-0 bg-black/60 text-white p-2 text-sm font-medium z-10 truncate">
+                            {m.name}
+                          </div>
+                        )}
+                        <img src={m.url} alt={m.name || `Media ${idx}`} className="absolute inset-0 w-full h-full object-cover" />
+                      </div>
+                    ))}
+                  </div>
+                )}
               </div>
             ) : selectedVideo ? (
               <iframe
