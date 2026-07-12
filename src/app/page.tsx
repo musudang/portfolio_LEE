@@ -69,11 +69,13 @@ export default function Home() {
       year: "2026",
       category: "Web Platform",
       media: [
-        { type: "image", url: "/internship.jpg" }
+        { type: "image", url: "/memory/memort.jpg" },
+        { type: "image", url: "/memory/KakaoTalk_20260711_122243144.png" },
+        { type: "image", url: "/memory/KakaoTalk_20260712_204540671_01.jpg" },
+        { type: "image", url: "/memory/KakaoTalk_20260712_204540671_02.jpg" },
+        { type: "image", url: "/memory/2d3ed6b7-cdd7-448e-8406-3cb436cc05b1.webp" }
       ],
-      files: [
-        { name: "Memory Document", url: "#" }
-      ]
+      files: []
     },
     {
       title: "FRESC LEAP",
