@@ -58,27 +58,7 @@ export default function Home() {
       ]
     },
     {
-      title: "Memory",
-      description: "A trusted local social platform that lowers the psychological barriers of traditional dating apps, connecting the 4050 generation through wholesome, everyday touchpoints.",
-      tags: ["Web", "Platform"],
-      link: "https://www.instagram.com/memory_meet_space/",
-      linkName: "Instagram",
-      customLinks: [
-        { name: "Website", url: "https://www.memorymeet.space/" }
-      ],
-      year: "2026",
-      category: "Web Platform",
-      media: [
-        { type: "image", url: "/memory/memort.jpg" },
-        { type: "image", url: "/memory/KakaoTalk_20260711_122243144.png" },
-        { type: "image", url: "/memory/KakaoTalk_20260712_204540671_01.jpg" },
-        { type: "image", url: "/memory/KakaoTalk_20260712_204540671_02.jpg" },
-        { type: "image", url: "/memory/2d3ed6b7-cdd7-448e-8406-3cb436cc05b1.webp" }
-      ],
-      files: []
-    },
-    {
-      title: "FRESC LEAP",
+      title: "FRESC LEAP: EMISSION TRACKING",
       description: "Carbon emission tracking and reduction project. Applying economic models to environmental data.",
       tags: ["Research", "Climate Economics", "Data Analysis"],
       year: "2025",
@@ -119,6 +99,26 @@ export default function Home() {
         { name: "Training Presentation", url: "/files/Investment_Expert_Training_presentation.pdf" },
         { name: "Training Paper", url: "/files/Investment_Expert_Training_paper.pdf" }
       ]
+    },
+    {
+      title: "Memory",
+      description: "A trusted local social platform that lowers the psychological barriers of traditional dating apps, connecting the 4050 generation through wholesome, everyday touchpoints.",
+      tags: ["Web", "Platform"],
+      link: "https://www.instagram.com/memory_meet_space/",
+      linkName: "Instagram",
+      customLinks: [
+        { name: "Website", url: "https://www.memorymeet.space/" }
+      ],
+      year: "2026",
+      category: "Web Platform",
+      media: [
+        { type: "image", url: "/memory/memort.jpg" },
+        { type: "image", url: "/memory/KakaoTalk_20260711_122243144.png" },
+        { type: "image", url: "/memory/KakaoTalk_20260712_204540671_01.jpg" },
+        { type: "image", url: "/memory/KakaoTalk_20260712_204540671_02.jpg" },
+        { type: "image", url: "/memory/2d3ed6b7-cdd7-448e-8406-3cb436cc05b1.webp" }
+      ],
+      files: []
     },
     {
       title: "Surfly.info",
@@ -317,6 +317,10 @@ export default function Home() {
 
                   <div className="space-y-2">
                     <h3 className="text-lg font-bold">Internship</h3>
+                    <div>
+                      <p className="font-medium">NeuroTx (2026)</p>
+                      <p className="text-muted-foreground text-sm">Korea</p>
+                    </div>
                     <div>
                       <p className="font-medium">PT. Tekniko (2020)</p>
                       <p className="text-muted-foreground text-sm">Indonesia</p>
