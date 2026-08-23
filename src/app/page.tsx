@@ -54,7 +54,8 @@ export default function Home() {
       ],
       files: [
         { name: "TEMAN Presentation", url: "/files/TEMAN_presentation.pdf.pdf" },
-        { name: "TEMAN Document", url: "/files/TEMAN_presentation.pdf1.pdf" }
+        { name: "TEMAN Document", url: "/files/TEMAN_presentation.pdf1.pdf" },
+        { name: "MVP Certificate", url: "/files/TEMAN_MVP_Certificate.pdf" }
       ]
     },
     {
@@ -105,7 +106,7 @@ export default function Home() {
       description: "Comprehensive ESG education program covering basic, advanced, and practical stages.",
       tags: ["ESG", "Education", "Academy"],
       year: "2026",
-      category: "Education"
+      category: "Training"
     },
     {
       title: "Memory",
@@ -352,6 +353,7 @@ export default function Home() {
                       <li>TIBA (Indonesian as a Foreign Language Test)</li>
                       <li>FRESC: LEAP (Research paper contest)</li>
                       <li>START-UP CONTEST: INFOSELLER</li>
+                      <li>강동구 해냄센터 모의 창업 스쿨 수료</li>
                     </ul>
                   </div>
                 </div>
