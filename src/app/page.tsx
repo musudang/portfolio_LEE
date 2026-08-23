@@ -101,6 +101,13 @@ export default function Home() {
       ]
     },
     {
+      title: "ESG Youth Forum Academy",
+      description: "Comprehensive ESG education program covering basic, advanced, and practical stages.",
+      tags: ["ESG", "Education", "Academy"],
+      year: "2026",
+      category: "Education"
+    },
+    {
       title: "Memory",
       description: "A trusted local social platform that lowers the psychological barriers of traditional dating apps, connecting the 4050 generation through wholesome, everyday touchpoints.",
       tags: ["Web", "Platform"],
