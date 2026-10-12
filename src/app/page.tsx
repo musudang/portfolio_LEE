@@ -324,6 +324,14 @@ export default function Home() {
                   </div>
 
                   <div className="space-y-2">
+                    <h3 className="text-lg font-bold">Work Experience</h3>
+                    <div>
+                      <p className="font-medium">FROM 428</p>
+                      <p className="text-muted-foreground text-sm">Korea</p>
+                    </div>
+                  </div>
+
+                  <div className="space-y-2">
                     <h3 className="text-lg font-bold">Internship</h3>
                     <div>
                       <p className="font-medium">NeuroTx (2026)</p>
