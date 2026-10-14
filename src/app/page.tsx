@@ -374,13 +374,15 @@ export default function Home() {
                   year: "2026 (Sep)",
                   title: "FROM428",
                   company: "Work Experience",
-                  description: "Climate tech startup experience focused on carbon reduction solutions."
+                  description: "Climate tech startup experience focused on carbon reduction solutions.",
+                  isSubItem: true,
                 },
                 {
                   year: "2026 (Aug)",
                   title: "NEUROTX",
                   company: "Internship",
-                  description: "Digital healthcare and non-invasive electroceutical research internship."
+                  description: "Digital healthcare and non-invasive electroceutical research internship.",
+                  isSubItem: true,
                 },
                 {
                   year: "2026",
@@ -416,7 +418,8 @@ export default function Home() {
                   year: "2020",
                   title: "PT. Tekniko",
                   company: "Internship",
-                  description: "Industrial plant engineering and construction internship in Indonesia."
+                  description: "Industrial plant engineering and construction internship in Indonesia.",
+                  isSubItem: true,
                 },
                 {
                   year: "2020",
