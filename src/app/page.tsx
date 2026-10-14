@@ -252,7 +252,7 @@ export default function Home() {
                   <a href="https://www.instagram.com/raphaelseunghunlee/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
                     Instagram
                   </a>
-                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
+                  <a href="https://www.linkedin.com/in/seunghunlee41/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
                     LinkedIn
                   </a>
                 </div>
@@ -624,7 +624,7 @@ export default function Home() {
                   <Link href="https://github.com/musudang" target="_blank" className="p-4 rounded-full bg-secondary hover:bg-foreground hover:text-background transition-all duration-300">
                     <Github size={20} />
                   </Link>
-                  <Link href="https://linkedin.com" target="_blank" className="p-4 rounded-full bg-secondary hover:bg-foreground hover:text-background transition-all duration-300">
+                  <Link href="https://www.linkedin.com/in/seunghunlee41/" target="_blank" className="p-4 rounded-full bg-secondary hover:bg-foreground hover:text-background transition-all duration-300">
                     <Linkedin size={20} />
                   </Link>
                 </div>
