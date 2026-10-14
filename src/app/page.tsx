@@ -324,15 +324,11 @@ export default function Home() {
                   </div>
 
                   <div className="space-y-2">
-                    <h3 className="text-lg font-bold">Work Experience</h3>
+                    <h3 className="text-lg font-bold">Jobs & Internship</h3>
                     <div>
-                      <p className="font-medium">FROM 428</p>
+                      <p className="font-medium">From428 (2026)</p>
                       <p className="text-muted-foreground text-sm">Korea</p>
                     </div>
-                  </div>
-
-                  <div className="space-y-2">
-                    <h3 className="text-lg font-bold">Internship</h3>
                     <div>
                       <p className="font-medium">NeuroTx (2026)</p>
                       <p className="text-muted-foreground text-sm">Korea</p>
@@ -351,8 +347,6 @@ export default function Home() {
                     </div>
                   </div>
 
-
-
                   <div className="space-y-2">
                     <h3 className="text-lg font-bold">Certificates</h3>
                     <ul className="text-muted-foreground space-y-1 text-sm font-mono list-disc list-inside marker:text-foreground/50">
@@ -370,6 +364,18 @@ export default function Home() {
 
             <div className="lg:col-span-8 pt-2">
               <Timeline items={[
+                {
+                  year: "2026 (Sep)",
+                  title: "From428",
+                  company: "Work Experience",
+                  description: "Climate tech startup experience focused on carbon reduction solutions."
+                },
+                {
+                  year: "2026 (Aug)",
+                  title: "NeuroTx",
+                  company: "Internship",
+                  description: "Digital healthcare and non-invasive electroceutical research internship."
+                },
                 {
                   year: "2026",
                   title: "4th Year Senior",
@@ -399,6 +405,12 @@ export default function Home() {
                   title: "Freshman Year",
                   company: "Korea University",
                   description: "Entered university."
+                },
+                {
+                  year: "2020",
+                  title: "PT. Tekniko",
+                  company: "Internship",
+                  description: "Industrial plant engineering and construction internship in Indonesia."
                 },
                 {
                   year: "2020",
