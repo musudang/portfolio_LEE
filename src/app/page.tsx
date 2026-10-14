@@ -365,14 +365,20 @@ export default function Home() {
             <div className="lg:col-span-8 pt-2">
               <Timeline items={[
                 {
+                  year: "2027",
+                  title: "Graduation",
+                  company: "Korea University",
+                  description: "Expected Graduation (Bachelor's Degree)."
+                },
+                {
                   year: "2026 (Sep)",
-                  title: "From428",
+                  title: "FROM428",
                   company: "Work Experience",
                   description: "Climate tech startup experience focused on carbon reduction solutions."
                 },
                 {
                   year: "2026 (Aug)",
-                  title: "NeuroTx",
+                  title: "NEUROTX",
                   company: "Internship",
                   description: "Digital healthcare and non-invasive electroceutical research internship."
                 },
